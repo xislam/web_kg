@@ -64,3 +64,55 @@ class AboutUs(models.Model):
         verbose_name_plural = "О нас"
         verbose_name = "О нас"
 
+
+class AboutKg(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Заголовок")
+    text = RichTextField(verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "О Кыргызстане"
+        verbose_name_plural = "О Кыргызстане"
+
+
+class Gallery(models.Model):
+    img = models.ImageField(verbose_name="Фото", upload_to="gallery_img")
+    title = models.CharField(verbose_name="Заголовок", max_length=100)
+    text = models.TextField(verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "Галерея"
+        verbose_name = "Галерея"
+
+
+class Blog(models.Model):
+    img = models.ImageField(verbose_name="Фото", upload_to="blog_img")
+    title = models.CharField(verbose_name="Заголовок", max_length=70)
+    text = RichTextField(verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Блог"
+        verbose_name_plural = "Блог"
+
+
+class Contacts(models.Model):
+    title = models.CharField(verbose_name="Заголовок", max_length=100)
+    text = RichTextField(verbose_name="Описание")
+    phone_1 = models.CharField(verbose_name="Номер вотцап", max_length=12)
+    phone_2 = models.CharField(verbose_name="Номер телефона", max_length=12)
+    email = models.EmailField(verbose_name="Почта")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "Контакты"
+        verbose_name = "Контакты"
