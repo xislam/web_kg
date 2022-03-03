@@ -1,0 +1,36 @@
+.thirdSlider{
+	width: box-sizing;
+	overflow: hidden;
+}
+.swiper3 img{
+  width: 100%
+
+}
+.thirdSliderBox{
+	position: relative;
+}
+.thirdSliderText{
+	position: absolute;
+	bottom: 20px;
+
+}
+.thirdSliderText:hover{
+	cursor: pointer;
+	bottom: 35px;
+	transition: all .5s ease;
+
+}
+.thirdSlider h3{
+   font-family: 'Montserrat', sans-serif;
+   font-size: 24px;
+   font-weight: 400;
+   color: white;
+}
+.thirdSlider p{
+	
+	font-family: "Lato", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: white;
+
+}

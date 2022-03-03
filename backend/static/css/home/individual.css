@@ -1,0 +1,41 @@
+.individual{
+	display: flex;
+	margin: 80px 170px;
+
+}
+.individual-left{
+	width: 500px;
+	padding: 0 30px;
+}
+.individual-right{
+   width: 500px;
+   	padding: 80px 30px 0 30px;
+}
+
+.individual h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 38px;
+	color: #3262a1;
+	font-weight: 700;
+}
+.individual span{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 38px;
+	color: #4cb8e0;
+	font-weight: 100;
+}
+.individual h2{
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+    color: #4cb8e0;
+}
+.individual p{
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
+	size: 18px;
+	font-weight: 300;
+	line-height: 30px;
+	color: #31609f;
+}
