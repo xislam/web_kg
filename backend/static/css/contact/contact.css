@@ -1,0 +1,79 @@
+.contactLine{
+  	background: #F9F9F9;
+}
+.contactBox{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 200px;
+
+	margin: 0 200px;
+}
+.contactBox h2{
+    color: #31609F;
+	padding-left: 20px;
+	font-family: "Lato", sans-serif;
+	font-size: 26px;
+	font-weight: 300;
+}
+.contactBox p{
+	color: #4FB5EB;
+	text-transform: uppercase;
+	font-family: "Lato", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	padding-left: 20px;
+}
+.contactBox span{
+	color: #31609F;
+	padding-left: 10px;
+	font-family: "Lato", sans-serif;
+	font-size: 26px;
+	font-weight: 400;
+
+}
+.contactBox img{
+	padding-top: 10px;
+}
+.contactNumber{
+	display: flex;
+}
+.contactNumber h2, p{
+	margin: 5px;
+}
+.contactWhatsApp{
+	display: flex;
+}
+.contactWhatsApp h2, p{
+	margin: 5px;
+}
+.contactEmail{
+	display: flex;
+}
+.contactEmail h2, p{
+	margin: 5px;
+}
+
+@media (max-width: 768px) {
+
+.contactBox{
+	display: inline-block;
+	justify-content: center;
+	margin: 0;
+	height: 250px;
+} 
+.contactNumber, .contactWhatsApp {
+	display: flex;
+	justify-content: center;
+ }
+ .contactEmail{
+ 	padding-left: 45px;
+ }
+}
+@media (min-width: 768px) and (max-width: 1200px) { 
+
+
+ }
+@media (min-width: 1200px) {
+
+} 

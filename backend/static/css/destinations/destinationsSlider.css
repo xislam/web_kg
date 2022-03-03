@@ -1,0 +1,65 @@
+
+.destinationsSlider{
+  overflow: hidden;
+	margin: 100px 200px;
+}
+.swiper4{
+	overflow: hidden;
+}
+.destinationsSlider p{
+	width: 255px;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: #31609f;
+}
+.destinationsSlider h3{
+   font-family: "Lato", sans-serif;
+   font-weight: 400;
+   font-size: 20px;
+   color: #4eb5e6;
+}
+.destinationsSlider h2{
+   font-family: "Lato", sans-serif;
+   font-weight: 500;
+   font-size: 28px;
+   color: #31609f;
+}
+
+@media (max-width: 768px) {
+
+  
+.destinationsSlider{
+  /*display: none;*/
+  /*width: 350px;*/
+  /*overflow: hidden;*/
+  margin: 0;
+}
+.swiper4{
+  display: none;
+}
+
+.swiper6{
+  overflow: hidden;
+  margin-left: calc(100% - 80%);
+  width: 500px;
+}
+
+ }
+@media (min-width: 768px) and (max-width: 1200px) { 
+.destinationsSlider{
+  overflow: hidden;
+  margin: 20px 10px;
+
+}
+.swiper6{
+  display: none;
+  width: 500px;
+}
+
+ }
+@media (min-width: 1200px) {
+.swiper6{
+  display: none;
+}
+} 
