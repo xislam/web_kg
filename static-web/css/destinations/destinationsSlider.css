@@ -1,16 +1,10 @@
-.swiper-slide{
-	display: flex;
-	justify-content: center;
-	
-}
-.destinationsSlider{
-	display: flex;
-	justify-content: center;
 
-	width: box-sizing;
+.destinationsSlider{
+  overflow: hidden;
+	margin: 100px 200px;
+}
+.swiper4{
 	overflow: hidden;
-	
-	
 }
 .destinationsSlider p{
 	width: 255px;
@@ -31,3 +25,41 @@
    font-size: 28px;
    color: #31609f;
 }
+
+@media (max-width: 768px) {
+
+  
+.destinationsSlider{
+  /*display: none;*/
+  /*width: 350px;*/
+  /*overflow: hidden;*/
+  margin: 0;
+}
+.swiper4{
+  display: none;
+}
+
+.swiper6{
+  overflow: hidden;
+  margin-left: calc(100% - 80%);
+  width: 500px;
+}
+
+ }
+@media (min-width: 768px) and (max-width: 1200px) { 
+.destinationsSlider{
+  overflow: hidden;
+  margin: 20px 10px;
+
+}
+.swiper6{
+  display: none;
+  width: 500px;
+}
+
+ }
+@media (min-width: 1200px) {
+.swiper6{
+  display: none;
+}
+} 

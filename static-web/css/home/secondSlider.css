@@ -1,5 +1,5 @@
 .secondSlider{
-	width: box-sizing;
+
 	overflow: hidden;
 	margin: 0 200px;
 
@@ -29,3 +29,35 @@
    font-size: 28px;
    color: #31609f;
 }
+
+
+@media (max-width: 768px) {
+
+ .secondSlider{
+	width: 380px;
+	margin: 0;
+}
+.swiper2{
+	display: none;
+}  
+
+ }
+@media (min-width: 768px) and (max-width: 1200px) { 
+
+.secondSlider{
+	width: 800px;
+	margin: 0 10px;
+}
+.swiper7{
+	display: none;
+ }
+}
+@media (min-width: 1200px) {
+.secondSlider{
+	width: 800px;
+	margin: 0 10px;
+}
+.swiper7{
+	display: none;
+ }
+} 

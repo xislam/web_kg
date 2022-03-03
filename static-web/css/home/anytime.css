@@ -1,6 +1,6 @@
 .anytime{
 	width: 100%;
-	height: 500px;
+	height: 400px;
 	display: flex;
 	padding:  100px 0 0 0;
 
@@ -33,3 +33,32 @@
   color: #31609f;
   font-weight: 300;
 }
+
+
+@media (max-width: 768px) {
+
+  .anytime{
+    display: inline;
+    margin: 50px 10px;
+  }
+  .anytimeText{
+    padding: 0 10px;
+    width: 100%;
+  }
+
+ }
+@media (min-width: 768px) and (max-width: 1200px) { 
+
+.anytime{
+    display: inline-block;
+    margin: 50px 10px;
+}
+  .anytimeText{
+    
+    width: 100%;
+  }
+ }
+@media (min-width: 1200px) {
+
+} 
+

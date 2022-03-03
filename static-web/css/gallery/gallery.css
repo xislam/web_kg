@@ -1,0 +1,106 @@
+.galleryTextBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+}
+.galleryText{
+
+	width: 70%;
+}
+.galleryText h2{
+	display: flex;
+	justify-content: center;
+	font-family: "Montserrat", sans-serif;
+	font-size: 38px;
+	font-weight: 500;
+	line-height: 46px;
+	color: #3262A1;
+	text-transform: uppercase;
+}
+.galleryText span{
+	font-family: "Montserrat", sans-serif;
+	font-size: 38px;
+	font-weight: 200;
+	line-height: 46px;
+	color: #4cb8e0;
+	text-transform: uppercase;
+}
+.galleryText p{
+
+	display: flex;
+	justify-content: center;
+	font-family: "Lato", sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 30px;
+	color: #31609f;
+}
+
+
+.gallerySlider{
+	overflow: hidden;
+}
+
+
+
+.galleryText button {
+  line-height: 30px;
+  display: flex;
+  justify-content: center;	
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background: #4CB8E0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border: solid 1px #4CB8E0;
+  padding: 15px 30px;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.galleryText button:hover {
+  color: #3498db;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  
+  
+  color: #4cb8e0;
+  text-transform: uppercase;
+ 
+  border-radius: 5px;
+}
+.galleryText button::after {
+  content: "";
+  background: #ecf0f1;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+
+
+
+
+
+.galleryText button::after {
+  transition: all 0.3s ease;
+}
+.galleryText button:hover::after {
+  transition: all 0.3s ease-out;
+}
+
+.galleryText button::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+}
+.galleryText button:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
