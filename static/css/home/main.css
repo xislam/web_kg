@@ -98,3 +98,13 @@ body{
     width: 177px;
     height: 60px;
 }
+@media (max-width: 400px) {
+.logo{
+    display: none;
+}
+}
+@media (max-width: 1000px) {
+.logo{
+    display: none;
+}
+}

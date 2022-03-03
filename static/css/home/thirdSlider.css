@@ -12,12 +12,12 @@
 .thirdSliderText{
 	position: absolute;
 	bottom: 20px;
-
+    transition: transform 500ms;
 }
 .thirdSliderText:hover{
 	cursor: pointer;
-	bottom: 35px;
-	transition: all .5s ease;
+	transform: translateY(-10px);
+
 
 }
 .thirdSlider h3{

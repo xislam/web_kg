@@ -46,7 +46,7 @@
 
 .secondSlider{
 	width: 800px;
-	margin: 0 10px;
+	margin: 0 auto;
 }
 .swiper7{
 	display: none;
@@ -54,8 +54,8 @@
 }
 @media (min-width: 1200px) {
 .secondSlider{
-	width: 800px;
-	margin: 0 10px;
+	
+	
 }
 .swiper7{
 	display: none;

@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,118 +8,117 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../static-web/css/home/main.css">
-    <link rel="stylesheet" href="../static-web/css/home/home.css">
-    <link rel="stylesheet" href="../static-web/css/home/individual.css">
-    <link rel="stylesheet" href="../static-web/css/home/secondSlider.css">
-    <link rel="stylesheet" href="../static-web/css/home/thirdSlider.css">
-    <link rel="stylesheet" href="../static-web/css/home/anytime.css">
-    <link rel="stylesheet" href="../static-web/css/home/footer.css">
-    <link rel="stylesheet" href="../static-web/css/destinations/destinationsSlider.css">
-    <link rel="stylesheet" href="../static-web/css/contact/contact.css">
+    <link rel="stylesheet" href="{% static 'css/home/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/individual.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/secondSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/thirdSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/anytime.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/destinations/destinationsSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-   <div class="logo">
-     <div class="logo-box">
+<div class="logo">
+    <div class="logo-box">
         <div class="logo-img">
-          <img src="../static-web/images/logo-ns-1.png"/>
+            <img src="../images/logo-ns-1.png"/>
         </div>
         <div class="logo-section">
-          <div class="logo-text">
-            <a href="../templates/main.html">start</a>
-            <a to="">about Us</a>
-            <a href="../templates/destinations.html">destinations</a>
-            <a href="../templates/gallery.html">gallery</a>
-            <a href="#">contact</a>
-          </div>
-         </div>
-         <div class="logo-email">
-           <button>email</button>
-         </div>
-     </div>
-
-   </div>
-
-   <div class="anytime">
-     <div class="anytimeImg">
-       <img src="" alt=""/>
-     </div>
-     <div class="anytimeText">
-       <h2>ANYTIME <span>& ANYWHERE</span></h2>
-       <p>Have we managed to arouse your interest in Kyrgyzstan? Then send us an email with your questions or requests. We would be happy to send you a non-binding offer. We look forward to seeing you and warmly welcome you!</p>
-     </div>
-
-   </div>
-
-   <div class="contactLine">
-     <div class="contactBox">
-       <div class="contactNumber">
-         <div class="contactNumberIcon">
-           <img src="../static-web/images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png" alt="">
-         </div>
-         <div>
-             <h2>0996<span>551718899</span></h2>
-             <p>info & date</p>
-         </div>
-       </div>
-       <div class="contactWhatsApp">
-         <div class="contactWhatsAppIcon">
-           <img src="../static-web/images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png" alt="">
-         </div>
-         <div>
-             <h2>0996<span>551718899</span></h2>
-             <p>whatsapp me</p>
-         </div>
-       </div>
-       <div class="contactEmail">
-         <div class="contactEmailIcon">
-           <img src="../static-web/images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png" alt="">
-         </div>
-         <div>
-             <h2>info@kirgistan-reisen.com</h2>
-             <p>email me</p>
-         </div>
-       </div>
-     </div>
-   </div>
-
-   <div class="footer">
-     <div class="footerBox">
-         <div class="footerImg">
-           <img src="../static-web/images/white-350-1.png" alt=""/>
-         </div>
-         <div class="footerAddress">
-           <h2>POSTAL ADDRESS</h2>
-           <p>Prospekt Mira 61a (Ap587)</p>
-           <p>720044 Bishkek</p>
-           <p>Republic of Kyrgyzstan</p>
-         </div>
-         <div class="footerContact">
-          <div>
-            <h2>contact</h2>
-              <a href="tel:+996551718899">0996 55 171 8899</a>
-              </br>
-              <a href="mailto:info@kirgistan-reisen.com">info@kirgistan-reisen.com</a>
-           </div>
-           <div class="socialContacts">
-             <i class="fas fa-clock"></i>
+            <div class="logo-text">
+                <a href="../html/main.html">start</a>
+                <a to="">about Us</a>
+                <a href="../html/destinations.html">destinations</a>
+                <a href="../html/gallery.html">gallery</a>
+                <a href="#">contact</a>
             </div>
-          </div>
-     </div>
-   </div>
+        </div>
+        <div class="logo-email">
+            <button>email</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="anytime">
+    <div class="anytimeImg">
+        <img src="" alt=""/>
+    </div>
+    <div class="anytimeText">
+        <h2>ANYTIME <span>& ANYWHERE</span></h2>
+        <p>Have we managed to arouse your interest in Kyrgyzstan? Then send us an email with your questions or requests.
+            We would be happy to send you a non-binding offer. We look forward to seeing you and warmly welcome you!</p>
+    </div>
+
+</div>
+
+<div class="contactLine">
+    <div class="contactBox">
+        <div class="contactNumber">
+            <div class="contactNumberIcon">
+                <img src="../images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png" alt="">
+            </div>
+            <div>
+                <h2>0996<span>551718899</span></h2>
+                <p>info & date</p>
+            </div>
+        </div>
+        <div class="contactWhatsApp">
+            <div class="contactWhatsAppIcon">
+                <img src="../images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png" alt="">
+            </div>
+            <div>
+                <h2>0996<span>551718899</span></h2>
+                <p>whatsapp me</p>
+            </div>
+        </div>
+        <div class="contactEmail">
+            <div class="contactEmailIcon">
+                <img src="../images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png" alt="">
+            </div>
+            <div>
+                <h2>info@kirgistan-reisen.com</h2>
+                <p>email me</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footerBox">
+        <div class="footerImg">
+            <img src="{% static 'images/white-350-1.png' %}" alt=""/>
+        </div>
+        <div class="footerAddress">
+            <h2>POSTAL ADDRESS</h2>
+            <p>Prospekt Mira 61a (Ap587)</p>
+            <p>720044 Bishkek</p>
+            <p>Republic of Kyrgyzstan</p>
+        </div>
+        <div class="footerContact">
+            <div>
+                <h2>contact</h2>
+                <a href="tel:+996551718899">0996 55 171 8899</a>
+                </br>
+                <a href="mailto:info@kirgistan-reisen.com">info@kirgistan-reisen.com</a>
+            </div>
+            <div class="socialContacts">
+                <i class="fas fa-clock"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-
-
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script  src="../static-web/js/app.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>
