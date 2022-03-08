@@ -103,12 +103,13 @@ class Blog(models.Model):
         verbose_name_plural = "Блог"
 
 
-class Contacts(models.Model):
+class Contact(models.Model):
     title = models.CharField(verbose_name="Заголовок", max_length=100)
     text = RichTextField(verbose_name="Описание")
     phone_1 = models.CharField(verbose_name="Номер вотцап", max_length=12)
     phone_2 = models.CharField(verbose_name="Номер телефона", max_length=12)
     email = models.EmailField(verbose_name="Почта")
+    address = models.CharField(max_length=50, verbose_name="Адрес")
 
     def __str__(self):
         return self.title
@@ -116,3 +117,17 @@ class Contacts(models.Model):
     class Meta:
         verbose_name_plural = "Контакты"
         verbose_name = "Контакты"
+
+
+class Links(models.Model):
+    title = models.CharField(verbose_name="ссылки", max_length=60)
+    youtube = models.URLField(verbose_name="youtube")
+    what_sap = models.URLField(verbose_name='whatsapp')
+    facebook = models.URLField(verbose_name='facebook')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "Ссылки"
+        verbose_name = "Ссылки"

@@ -1,5 +1,5 @@
 .thirdSlider{
-	width: box-sizing;
+	
 	overflow: hidden;
 }
 .swiper3 img{
@@ -12,12 +12,13 @@
 .thirdSliderText{
 	position: absolute;
 	bottom: 20px;
-
+  transition: transform 500ms;
+  margin: 0 0 0 30px;
 }
 .thirdSliderText:hover{
 	cursor: pointer;
-	bottom: 35px;
-	transition: all .5s ease;
+	transform: translateY(-10px);
+
 
 }
 .thirdSlider h3{
@@ -33,4 +34,90 @@
 	font-weight: 300;
 	color: white;
 
+}
+@media (max-width: 768px) {
+	
+.thirdSliderText{
+  margin: 0 0 0 30px;
+  
+
+}
+   .thirdSliderText h3, p{
+ 	font-size: 24px;
+ 	
+   }
+  
+   .thirdSliderBox img{
+     object-fit: cover;
+     height: 250px;
+     background-repeat: no-repeat;
+     margin: 0 8px;
+   }
+ 
+ .swiper3{
+ 	display: none;
+   }
+    .swiper13{
+  display: none;
+  
+ }
+   .thirdSliderBox{
+	width: 100%;
+}
+
+}
+  
+
+ 
+@media (min-width: 768px) and (max-width: 1200px) { 
+  
+ .swiper8{
+ 	display: none;
+ }
+ .swiper3{
+  display: none;
+
+ }
+ .thirdSlider{
+  height: 300px;
+}
+.thirdSlider{
+  height: 300px;
+}
+.thirdSliderBox img{
+  width: 100%;
+  object-fit: cover;
+     height: 250px;
+     background-repeat: no-repeat;
+ 
+}
+.thirdSliderText{
+  margin: 0 0 0 30px;
+
+
+}
+.swiper13{
+  overflow: hidden;
+  margin: 50px 0px;
+  height: 250px;
+ 
+
+
+   
+ }
+ .swiper13 img{
+   
+         
+   }
+
+ }
+@media (min-width: 1200px) {
+
+ .swiper8{
+ 	display: none;
+ }
+ .swiper13{
+  display: none;
+
+ }
 }
