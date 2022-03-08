@@ -1,9 +1,9 @@
 .destinationsGallery{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  grid-column-gap: 15px;
   grid-row-gap: 30px;
-  margin: 40px 90px;
+  margin: 40px 155px;
 	
 }
 .destinationsGallery img{
@@ -19,30 +19,35 @@
   
 }
 .destinationsGalleryBox{
-	overflow: hidden;
+	width: 370px;
+  height: 296px;
   position: relative;
-
+  overflow: hidden;
+  margin: 0 auto;
 }
 .destinationsGalleryBox img{
   cursor: pointer;
+  width: 370px;
+  height: 296px;
+  object-fit: cover;
 }
 
 .destinationsText{
-  width: 300px;
-  height: 100px;
+  
   position: absolute;
   cursor: pointer;
-  bottom: -120px;
-  left: 230px;
+  bottom: 5%;
+  
   transition: transform 500ms;
 
 }
+
 
 .destinationsText h2{
   font-family: "Lato", sans-serif;
   font-size: 22px;
   font-weight: 300;
-  color: white;
+  color: red;
 }
 
 .destinationsText p{

@@ -1,3 +1,19 @@
+
+.btn-primary{
+
+    background-color: #4CB8E0 !important;
+    border: none !important;
+    padding: 12px 60px !important; 
+
+}
+.btn-primary:hover{
+
+    background-color: white !important;
+    color: #4CB8E0 !important;
+    border: solid 1px #4CB8E0 !important;
+
+
+}
 .contactLine{
   	background: #F9F9F9;
 }
@@ -7,7 +23,7 @@
 	align-items: center;
 	height: 200px;
 
-	margin: 0 200px;
+	margin: 0 130px;
 }
 .contactBox h2{
     color: #31609F;
@@ -20,8 +36,9 @@
 	color: #4FB5EB;
 	text-transform: uppercase;
 	font-family: "Lato", sans-serif;
-	font-size: 18px;
-	font-weight: 300;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
 	padding-left: 20px;
 }
 .contactBox span{
@@ -40,6 +57,7 @@
 }
 .contactNumber h2, p{
 	margin: 5px;
+
 }
 .contactWhatsApp{
 	display: flex;
@@ -54,24 +72,80 @@
 	margin: 5px;
 }
 
+.emailSend{
+	
+	height: 500px;
+	margin: 0 20px;
+}
+
+.emailSendDrop{
+	display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.emailSendDrop h2{
+	margin: 4% 30px;
+	color: #3261a0;
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+
+}
+.emailSendDrop hr{
+
+    height: 1px;
+    width: 100px;
+    color: #3261A0;
+    background-color: #4FB5EB;
+    border: none;
+    margin: 3px 0 0 15px;
+    
+}
+.emailSendForm{
+	margin: 0 145px;
+}
+ 
+
 @media (max-width: 768px) {
 
 .contactBox{
-	display: inline-block;
+	display: grid;
 	justify-content: center;
-	margin: 0;
-	height: 250px;
+	margin: 0 60px;
+	height: 550px;
+}
+.contactLine{
+	height: 590px;
+	display: flex;
+	align-items: center;
+
 } 
 .contactNumber, .contactWhatsApp {
-	display: flex;
+	display: inline-block;
 	justify-content: center;
  }
  .contactEmail{
- 	padding-left: 45px;
+ 	
  }
+ .emailSendDrop hr{
+ 	display: none;
+ }
+ .emailSendForm{
+	margin: 0 20px;
+}
 }
 @media (min-width: 768px) and (max-width: 1200px) { 
+   .contactBox{
+   	display: grid;
+    grid-template-columns: 1fr 1fr;
+   	margin: 0 20px;
+   	height: 380px;
+   	padding: 40px 0;
 
+   }
+   .contactLine{
+	height: 380px;
+} 
 
  }
 @media (min-width: 1200px) {

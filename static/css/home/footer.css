@@ -1,11 +1,18 @@
 .footer{
-    height: 200px;
+    
     background: #1F3D66;
     padding: 40px 0 0 0;
+}
+.footerImg{
+    padding: 0 150px;
+
 }
 .footerImg img{
     width: 200px;
 
+}
+.footerAddress{
+   padding: 0 100px;   
 }
 .footerAddress h2{
     font-family: "Montserrat", sans-serif;
@@ -27,10 +34,11 @@
     
     display: flex;
     
-    justify-content: space-around;
+   
 }
 .footerContact{
-  display: inline;
+    display: inline;
+    padding: 0 100px;
 }
 .footerContact h2{
     font-family: "Montserrat", sans-serif;
@@ -50,30 +58,91 @@
 }
 .socialContacts i{
     size: 24px;
-    color: white;
+    color: #4cb8e0;
     width: 20px;
     height: 20px;
 }
 .socialContacts{
     height: 20px;
+    width: 100%;
 }
+
+.socialContacts a{
+    margin-right: 20px;
+}
+.footerBoxTwo{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    background: #1C375C;
+    padding: 0 180px;
+}
+.footerBoxTwo p{
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    color: #4cb8e0;
+    margin: 0;
+    
+}
+
 
 @media (max-width: 768px) {
 
  .footer{
-    height: 400px;
+    width: 100%;
+    height: 650px;
+    display: grid;
+   
+ }
+   
+ .footerBox{
+    display: grid;
+    margin: 0 60px;
+    height: 520px;
+ }  
+ .footerImg{
+    padding: 0;
+
+}
+.footerAddress{
+   padding: 0;   
+}
+.footerContact{
+    
+    padding: 0;
+}
+.footerBoxTwo{
     display: flex;
     justify-content: center;
- }   
- .footerBox{
-    display: inline-block;
- }  
-
+    padding: 0;
+    width: 100%;
+}
  }
 @media (min-width: 768px) and (max-width: 1200px) { 
-
-
+ .footerBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 300px;
+    margin: 20px;
  }
+ .footerImg{
+    padding: 0 20px;
+
+
+}
+.footerAddress{
+   padding: 0 20px;   
+}
+
+.footerContact{
+    padding: 0 20px;
+}
+.footerBoxTwo{
+    padding: 0 40px;
+ }
+}
 @media (min-width: 1200px) {
 
 } 

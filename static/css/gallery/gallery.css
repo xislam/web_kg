@@ -2,28 +2,36 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+  margin: 120px 0;
+
+
+
 
 }
 .galleryText{
 
-	width: 70%;
+	width: 80%;
 }
 .galleryText h2{
 	display: flex;
 	justify-content: center;
 	font-family: "Montserrat", sans-serif;
 	font-size: 38px;
-	font-weight: 500;
-	line-height: 46px;
+	font-weight: 700;
+  line-height: 46px;
 	color: #3262A1;
 	text-transform: uppercase;
+  margin-bottom: 20px;
+
+
 }
 .galleryText span{
 	font-family: "Montserrat", sans-serif;
 	font-size: 38px;
 	font-weight: 200;
 	line-height: 46px;
-	color: #4cb8e0;
+  padding: 0 10px;
+  color: #4cb8e0;
 	text-transform: uppercase;
 }
 .galleryText p{
@@ -40,6 +48,19 @@
 
 .gallerySlider{
 	overflow: hidden;
+  height: 900px;
+  background: ;
+  background: linear-gradient(180deg, #89D0EB 50%, #31609F 50%);
+
+
+
+}
+.swiper5{
+  height: 650px;
+  width: 100%;
+  object-fit: cover;
+  margin: 8% 0;
+  align-items: center;
 }
 
 
@@ -62,6 +83,8 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+  letter-spacing: 3px;
+
 }
 .galleryText button:hover {
   color: #3498db;
@@ -104,3 +127,66 @@
 .galleryText button:hover::after {
   transform: skewX(-45deg) scale(1, 1);
 }
+
+@media (max-width: 768px) {
+  .swiper5{
+  
+  display: none;
+
+}
+.swiper9{
+  height: 300px;
+  margin: 20px 0;
+
+
+}
+.swiper10{
+  display: none;
+
+}
+
+.gallerySlider img{
+  object-fit: cover;
+ }
+
+.gallerySlider{
+  overflow: hidden;
+  height: 350px;
+}
+}
+@media (min-width: 768px) and (max-width: 1200px) { 
+
+.swiper5{
+  
+ display: none;
+
+}
+.swiper9{
+ display: none;
+
+
+}
+.swiper10{
+  height: 700px;
+  margin: 10% 5%;
+  width: 90%;
+
+
+
+}
+
+.gallerySlider img{
+  object-fit: cover;
+ }
+}
+@media (min-width: 1200px) {
+.swiper9{
+ display: none;
+
+
+}
+.swiper10{
+  display: none;
+
+}
+} 

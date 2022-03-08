@@ -7,7 +7,7 @@
 	background: #89D0EB;
 }
 .destinationsBox{
-	width: 70%;
+	width: 78%;
 	
 }
 .destinationsFilter a{
@@ -35,3 +35,21 @@
 .btn:hover{
   color: #31609F; 
 }
+
+@media (max-width: 768px) {
+
+ .destinationsBox a{
+	font-size: 12px;
+	
+	
+}
+
+
+ }
+@media (min-width: 768px) and (max-width: 1200px) { 
+
+
+ }
+@media (min-width: 1200px) {
+
+} 
