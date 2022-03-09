@@ -59,7 +59,7 @@ header {
 	list-style: none;
 	text-decoration: none;
 }
-.nav li a {
+.nav li .link {
 	padding: 22px 1px;
 	height: 50px;
 	color: #31609f;
@@ -67,10 +67,15 @@ header {
 	letter-spacing: 0.2em;
 	transition: 0.1s;
 }
-.nav li a:hover {
+.nav li .link:hover {
 	color: #4fb5eb;
 	border-bottom: 4px solid #4fb5eb;
 }
+.uber{
+	color: #4fb5eb;
+	border-bottom: 4px solid #4fb5eb;
+}
+
 .bg_burger {
 	background-color: rgba(49, 96, 159, 1);
 	width: 100%;
@@ -119,6 +124,10 @@ header {
 		opacity: 1;
 	}
 }
+.sub_nav_select a {
+	text-decoration: none;
+	color: #4fb5eb;
+}
 
 .sub_nav_select .li {
 	cursor: pointer;
@@ -128,16 +137,17 @@ header {
 	padding: 17px;
 	border-bottom: 1px solid rgb(136, 136, 146);
 }
-.sub_nav_select .li2 {
+.sub_nav_select .li2{
 	list-style: none;
 	cursor: pointer;
 	width: 90%;
 	height: 50px;
 	padding: 17px;
 }
-.sub_nav_select li:hover {
+.sub_nav_select a:hover {
 	color: white;
 }
+
 /* menu */
 .mobile_menu_container {
 	width: 1200px;
@@ -154,6 +164,13 @@ header {
 }
 .mobile_nav li {
 	line-height: 260%;
+}
+.mobile_nav li a {
+	text-decoration: none;
+	color: #b9c8e9;
+}
+.mobile_nav li a:hover{
+	color: white;
 }
 .sub_nav {
 	list-style: none;
@@ -277,6 +294,16 @@ header {
 	justify-content: space-between;
 	width: 100%;
 	padding-top: 80px;
+	animation: appearance ease-in 1s;
+}
+
+@keyframes appearance {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .blocks_for_first_section {
@@ -373,7 +400,7 @@ header {
 /* BUTTON ENDED */
 
 /* SLIDER */
-.container_for_slider{
+.container_for_slider {
 	width: 1300px;
 	margin: 0 auto;
 	padding: 30px 0px 0px 0px;
@@ -510,15 +537,15 @@ h4 {
 	text-decoration: none;
 }
 .icon_you_tube {
-	content: url(css/assest/youtube-logotype.png);
+	content: url(./assets/youtube-logotype.png);
 	transition: 0.4s;
 }
 .icon_whats_app {
-	content: url(css/assest/whatsapp.png);
+	content: url(./assets/whatsapp.png);
 	transition: 0.4s;
 }
 .icon_facebook {
-	content: url(css/assest/facebook-app-symbol.png);
+	content: url(./assets/facebook-app-symbol.png);
 	transition: 0.4s;
 }
 .icon_you_tube:hover,

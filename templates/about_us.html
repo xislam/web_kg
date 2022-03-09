@@ -33,26 +33,28 @@
     </div>
     <ul class="nav">
         <li>
-            <a href="{% url 'index' %}"><span>START</span></a>
+            <a class="link" href=""><span>START</span></a>
         </li>
         <li class="UBER">
-            <a href=""><span class="select_in_nav">ABOUT  ▼</span></a>
+            <a class="link uber" href=""
+            ><span class="select_in_nav">UBER ▼</span></a
+            >
             <ul class="sub_nav_select">
-                <li class="li"><a href="{% url 'about_us' %}">ABOUT US</a></li>
-                <li class="li2"><a href="#">ABOUT KIRGISISTAN</a></li>
+                <li class="li"><a href="">UBER MIC</a></li>
+                <li class="li2"><a href="">UBER KIRGISISTAN</a></li>
             </ul>
         </li>
         <li>
-            <a href=""><span>DESTINATIONS</span></a>
+            <a class="link" href=""><span>REISEZIELE</span></a>
         </li>
         <li>
-            <a href=""><span>GALLERIES</span></a>
+            <a class="link" href=""><span>GALLERIE</span></a>
         </li>
         <li>
-            <a href=""><span>BLOG</span></a>
+            <a class="link" href=""><span>BLOG</span></a>
         </li>
         <li>
-            <a href=""><span>CONTACT</span></a>
+            <a class="link" href=""><span>KONTAKT</span></a>
         </li>
     </ul>
     <button class="mail_btn">EMAIL</button>
@@ -63,21 +65,21 @@
             <li><a href="">START</a></li>
             <li>
                 <div class="uber_select">
-                    <span>ABOUT</span>
+                    <span>UBER</span>
                     <label style="display: inline-block">
                         <input class="inpF" type="checkbox"/>
                         <div class="f"></div>
                     </label>
                 </div>
                 <ul class="sub_nav">
-                    <li class="li"><a href="">ABOUT US</a></li>
-                    <li><a href="">ABOUT KIRGISISTAN</a></li>
+                    <li class="li"><a href="">UBER MIC</a></li>
+                    <li><a href="">UBER KIRGISISTAN</a></li>
                 </ul>
             </li>
-            <li><a href="">DESTINATIONS</a></li>
-            <li><a href="">GALLERIES</a></li>
+            <li><a href="">REISEZIELE</a></li>
+            <li><a href="">GALLERIE</a></li>
             <li><a href="">BLOG</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="">KONTAKT</a></li>
         </ul>
     </div>
 </div>
@@ -192,7 +194,7 @@
     </div>
 </section>
 <div class="bg_footer">
-    <footer class="container">
+ <footer class="container">
         <div class="footer_display">
             <div class="block_for_footer_text block_img">
                 <img
@@ -231,6 +233,13 @@
     </footer>
 </div>
 <div class="under_footer_back">
+    <div class="container">
+        <p>
+            <a class="webdesign" href="https://wetnose.design/"
+            >webdesign | WetNose</a
+            >
+        </p>
+    </div>
 </div>
 
 <script src="{% static 'js/about_us_script.js' %} "></script>
