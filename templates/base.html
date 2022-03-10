@@ -1,10 +1,148 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/header.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/mobileBurger.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %} ">
+    {% block styles %}{% endblock %}
 
-{% block styles %}{% endblock %}
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <title>Document</title>
+</head>
+<body>
+<header class="container">
+    <div class="header_logo_container">
+        <img
+                class="logo"
+                src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/logo-ns-1.png"
+                alt=""
+        />
+    </div>
+    <div class="header_burger">
+        <input id="menu-toggle" type="checkbox"/>
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+    </div>
+    <ul class="nav">
+        <li>
+            <a class="link" href=""><span>START</span></a>
+        </li>
+        <li class="UBER">
+            <a class="link uber" href=""
+            ><span class="select_in_nav">UBER ▼</span></a
+            >
+            <ul class="sub_nav_select">
+                <li class="li"><a href="">UBER MIC</a></li>
+                <li class="li2"><a href="">UBER KIRGISISTAN</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="link" href=""><span>REISEZIELE</span></a>
+        </li>
+        <li>
+            <a class="link" href=""><span>GALLERIE</span></a>
+        </li>
+        <li>
+            <a class="link" href=""><span>BLOG</span></a>
+        </li>
+        <li>
+            <a class="link" href=""><span>KONTAKT</span></a>
+        </li>
+    </ul>
+    <button class="mail_btn">EMAIL</button>
+</header>
+<div class="bg_burger">
+    <div class="container mobile_menu_container">
+        <ul class="mobile_nav">
+            <li><a href="">START</a></li>
+            <li>
+                <div class="uber_select">
+                    <span>UBER</span>
+                    <label style="display: inline-block">
+                        <input class="inpF" type="checkbox"/>
+                        <div class="f"></div>
+                    </label>
+                </div>
+                <ul class="sub_nav">
+                    <li class="li"><a href="">UBER MIC</a></li>
+                    <li><a href="">UBER KIRGISISTAN</a></li>
+                </ul>
+            </li>
+            <li><a href="">REISEZIELE</a></li>
+            <li><a href="">GALLERIE</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">KONTAKT</a></li>
+        </ul>
+    </div>
+</div>
 
+{% block content %}{% endblock %}
 
- {% block content %}{% endblock %}
-
-
+<div class="bg_footer">
+    <footer class="container">
+        <div class="footer_display">
+            <div class="block_for_footer_text block_img">
+                <img
+                        class="logo"
+                        src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/white-350-1-300x93.png"
+                        alt="image"
+                />
+            </div>
+            <div class="block_for_footer_text">
+                <h4>POSTANSCHRIFT</h4>
+                <p>
+                    Prospekt Mira 61a (Ap587) <br/>
+                    720044 Bishkek <br/>
+                    Republic of Kyrgyzstan <br/>
+                </p>
+            </div>
+            <div class="block_for_footer_text">
+                <h4>KONTAKT</h4>
+                <p>
+                    0996 55 171 8899 <br/>
+                    info@kirgistan-reisen.com <br/>
+                </p>
+                <div class="block_icons">
+                    <a href="https://www.youtube.com/">
+                        <i class="icon_you_tube icons"></i>
+                    </a>
+                    <a href="https://web.whatsapp.com/">
+                        <i class="icon_whats_app icons"></i>
+                    </a>
+                    <a href="https://www.facebook.com/">
+                        <i class="icon_facebook icons"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="under_footer_back">
+    <div class="container">
+        <p>
+            <a class="webdesign" href="https://wetnose.design/"
+            >webdesign | WetNose</a
+            >
+        </p>
+    </div>
+</div>
 {% block scripts %}{% endblock %}
+<script src="{% static 'js/script.js' %}"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
 

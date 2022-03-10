@@ -1,13 +1,20 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
-from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText
+from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg
 
 
 class BlogList(ListView):
     template_name = 'blog.html'
     model = Blog
+    paginate_by = 3
     context_object_name = 'blocks'
+
+
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = 'blog_ditail.html'
+    context_object_name = 'blog'
 
 
 class ContactView(ListView):
@@ -27,6 +34,15 @@ class AboutAsView(ListView):
         context["contacts"] = Contact.objects.first()
         context["links"] = Links.objects.first()
         return context
+
+
+class AboutKgView(ListView):
+    template_name = 'about_kg.html'
+    model = AboutKg
+    context_object_name = 'about_kg'
+
+    def get_context_data(self, **kwargs):
+        pass
 
 
 class IndexView(ListView):

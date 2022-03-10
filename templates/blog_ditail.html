@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href={% static  "css/blog_style.css" %}/>
+    <link rel="stylesheet" href={% static "css/blog_response.css" %}/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div>
+            <img
+                    class="img_blockpost"
+                    src="{{ blog.img.url }}"
+                    alt=""
+            />
+            <b
+            ><h2 class="zogolovok">
+                <a href="/">{{ blog.title }}</a>
+            </h2></b
+            >
+            <p class="text">
+                {{ blog.text | safe }}
+            </p>
+
+        </div>
+    </div>
+{% endblock %}
