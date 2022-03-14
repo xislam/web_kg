@@ -19,6 +19,9 @@
 {#            <h1><strong>ÜBER</strong> KIRGISISTAN</h1>#}
             {{ about_kg.text }}
         </div>
+    <div class="btn_wrapper">
+            <button class="con_btn">KONTAKT INFO</button>
+        </div>
     </section>
     <section class="directions">
         <div class="container">
@@ -30,7 +33,7 @@
                 <div class="cell border_bottom border_right">
                     <div>
                         <img
-                                src="{% static '/assets/utka.png' %}"
+                                src="{% static '/css/assets/utka.png' %}"
                                 alt=""
                         />
                     </div>
@@ -40,7 +43,7 @@
                 <div class="cell border_bottom border_right">
                     <div>
                         <img
-                                src="./assets/mountain.png"
+                                src="{% static 'css/assets/mountain.png' %}"
                                 alt=""
                         />
                     </div>
@@ -49,7 +52,7 @@
                 <div class="cell border_bottom border_right">
                     <div>
                         <img
-                                src="./assets/mountain2.png"
+                                src="{% static 'css/assets/mountain2.png' %} "
                                 alt=""
                         />
                     </div>
@@ -58,7 +61,7 @@
                 <div class="cell border_bottom">
                     <div>
                         <img
-                                src="./assets/sckigebid.png"
+                                src="{% static 'css/assets/sckigebid.png' %} "
                                 alt=""
                         />
                     </div>
@@ -67,7 +70,7 @@
                 <div class="cell border_right">
                     <div>
                         <img
-                                src="./assets/three.png"
+                                src="{% static 'css/assets/three.png' %} "
                                 alt=""
                         />
                     </div>
@@ -76,7 +79,7 @@
                 <div class="cell border_right">
                     <div>
                         <img
-                                src="./assets/zdanie.png"
+                                src="{% static 'css/assets/zdanie.png' %} "
                                 alt=""
                         />
                     </div>
@@ -85,7 +88,7 @@
                 <div class="cell border_right">
                     <div>
                         <img
-                                src="./assets/zdanie2.png"
+                                src="{% static 'css/assets/zdanie2.png' %}"
                                 alt=""
                         />
                     </div>
@@ -94,7 +97,7 @@
                 <div class="cell">
                     <div>
                         <img
-                                src="./assets/zdanie3.png"
+                                src="{% static 'css/assets/zdanie3.png' %}"
                                 alt=""
                         />
                     </div>
@@ -135,48 +138,22 @@
                     ></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img
-                                src="./assets/photo_slider3.jpg"
-                                class="d-block w-100 fotos"
-                                alt="..."
-                        />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Метка первого слайда</h5>
-                            <p>
-                                Некоторый репрезентативный заполнитель для
-                                первого слайда.
-                            </p>
+                     {% for slider in sliders %}
+                        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                            <img
+                                    src="{{ slider.img.url }}"
+                                    class="d-block w-100 fotos container"
+                                    alt="..."
+                            />
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{ slider.title }}</h5>
+                                <p>
+                                    {{ slider.text }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img
-                                src="./assets/photo_slider1.jpg"
-                                class="d-block w-100 fotos"
-                                alt="..."
-                        />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Метка второго слайда</h5>
-                            <p>
-                                Некоторый репрезентативный заполнитель для
-                                второго слайда.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img
-                                src="./assets/photo_slider2.jpg"
-                                class="d-block w-100 fotos"
-                                alt="..."
-                        />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Метка третьего слайда</h5>
-                            <p>
-                                Некоторый репрезентативный заполнитель для
-                                третьего слайда.
-                            </p>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
                 <button
                         class="carousel-control-prev"
@@ -214,11 +191,10 @@
                 KONTAKTIEREN SIE UNS
                 <div class="line"></div>
             </h6>
-            <h1><strong>JEDERZEIT </strong><span>& ÜBERALL</span></h1>
+             <h1>{{ contacts.title }}</h1>
+{#            <h1><strong>JEDERZEIT </strong><span>& ÜBERALL</span></h1>#}
             <p>
-                Ist es uns gelungen Ihr Interesse an Kirgistan zu wecken? Dann schicken Sie uns eine Mail mit ihren
-                Fragen oder Wünschen. Gerne senden wir ihnen ein unverbindliches Angebot. Wir freuen uns auf Sie und
-                heißen Sie herzlich willkommen!
+                  {{ contacts.text| safe }}
             </p>
         </div>
     </section>

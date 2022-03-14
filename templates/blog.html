@@ -30,9 +30,8 @@
             <p class="text">
                 {{ blok.text |safe | slice:"300"  }}...
             </p>
-            <button class="btn">
                 <a href="{% url 'blog_detail' blok.pk %}">WEITERLESEN</a><span>→</span>
-            </button>
+
         </div>
     {% endfor %}
 

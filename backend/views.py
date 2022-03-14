@@ -42,7 +42,11 @@ class AboutKgView(ListView):
     context_object_name = 'about_kg'
 
     def get_context_data(self, **kwargs):
-        pass
+        context = super(AboutKgView, self).get_context_data(**kwargs)
+        context["sliders"] = Gallery.objects.all()
+        context["contacts"] = Contact.objects.first()
+        context["links"] = Links.objects.first()
+        return context
 
 
 class IndexView(ListView):

@@ -1,0 +1,258 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&family=Lato&family=Mochiy+Pop+P+One&family=Montserrat:wght@400;600;800;900&family=Open+Sans&family=Orbitron&family=Poppins:wght@300;400&family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* FONTS */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+
+/*---------------------------- SECTION----------------------------  */
+
+.about_author {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 80px;
+	animation: appearance_ ease-in 1s;
+}
+
+@keyframes appearance_ {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.blocks_for_first_section {
+	width: 48%;
+}
+
+.blocks_for_first_section p {
+	font-size: 18px;
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
+	line-height: 30px;
+	color: #31609f;
+	margin-top: 20px;
+}
+
+.blocks_for_first_section div {
+	font-family: 'Lato', sans-serif;
+	color: #4cb8e0;
+	font-size: 24px;
+	line-height: 1.25em;
+	font-weight: 300;
+	margin-top: 20px;
+}
+.blocks_for_first_section .space {
+	margin-top: 50px;
+}
+
+.about_author .blocks_for_first_section h1 strong {
+	font-size: 38px;
+	font-family: 'Montserrat', sans-serif;
+	color: #3262a1;
+}
+.about_author .blocks_for_first_section h1 {
+	font-size: 38px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+	color: #4cb8e0;
+}
+
+/* DIRECTIONS GRID  */
+.directions {
+	width: 100%;
+	background-color: rgba(76, 184, 224, 0.66);
+}
+.directions .container h2 {
+	display: flex;
+	align-items: center;
+	position: relative;
+	right: 120px;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 40px 0 40px 0;
+}
+.linee {
+	height: 2px;
+	width: calc(200px / 2);
+	background-color: white;
+	margin-right: 20px;
+	transform: translateX(-40px);
+}
+.grid_directions {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	width: 100%;
+	height: 500px;
+}
+.cell {
+	background-color: transparent;
+	transition: 0.3s;
+	text-align: center;
+}
+
+.border_bottom {
+	border-bottom: 1px solid #407eb4;
+}
+.border_right {
+	border-right: 1px solid #407eb4;
+}
+.grid_directions div div {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.cell:hover {
+	background-color: #4cb8e0;
+}
+
+.grid_directions img {
+	width: 98px;
+	height: 98px;
+}
+.cell h5 {
+	color: #ffffff;
+	font-family: 'Lato', Sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2.8px;
+}
+
+.alle {
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #31609f;
+	font-family: Montserrat;
+	transition: 0.2s;
+	margin-top: 40px;
+}
+.alle::after {
+	content: '→';
+	color: #31609f;
+	margin-left: 12px;
+}
+
+.alle:hover::after,
+.alle:hover {
+	color: white;
+	margin-left: 15px;
+}
+
+/* DIRECTIONS ENDED */
+
+/* SLIDER */
+.container_for_slider {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 30px 0px 0px 0px;
+}
+.slider {
+	width: 100%;
+	background: linear-gradient(
+		to top,
+		#31609f 50%,
+		rgba(76, 184, 224, 0.66) 50%
+	);
+	padding: 40px 0;
+}
+
+.slider h1 {
+	font-size: 38px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+	color: white;
+}
+.slider h1 strong {
+	font-size: 38px;
+	font-family: 'Montserrat', sans-serif;
+	color: #3262a1;
+}
+.fotos {
+	height: 750px;
+}
+
+/* SLIDER ENDED */
+
+/* section with phone  */
+.section_phone {
+	display: flex;
+	justify-content: space-around;
+}
+.phone_img {
+	width: 50%;
+}
+.phone_img img {
+	width: 350px;
+	height: 500px;
+}
+.description {
+	width: 50%;
+	margin-top: 100px;
+}
+.description h6 {
+	display: flex;
+	align-items: center;
+	color: #4fb5eb;
+	font-family: 'Montserrat', Sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.line {
+	height: 2px;
+	width: calc(200px / 2);
+	background-color: #4fb5eb;
+	margin-right: 20px;
+	transform: translateX(20px);
+}
+
+.description h1 strong {
+	font-weight: bold;
+	font-family: Montserrat;
+	font-weight: 700;
+	color: #3262a1;
+}
+.description h1 span {
+	font-weight: 100;
+	color: #4cb8e0;
+	font-size: 36px;
+	line-height: 43px;
+	font-family: Montserrat;
+	color: #4cb8e0;
+}
+
+.description p {
+	font-family: Lato;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 300;
+	color: #31609f;
+}
+
+/* seciton with phone ended */
+
+/* footer starting */
+
+/* footer ended */

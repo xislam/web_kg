@@ -3,11 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 /* FONTS */
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+
 
 .container {
 	max-width: 1200px;
@@ -62,29 +58,3 @@
 	margin-right: 20px;
 }
 
-.pagination {
-	/* display: inline-block; */
-	margin-bottom: 60px;
-}
-
-.pagination a {
-	color: rgba(49, 96, 159, 0.5);
-	float: left;
-	padding: 15px 22px;
-	text-decoration: none;
-	font-family: 'Lato', sans-serif;
-	background: rgb(240, 240, 240);
-	margin-left: 3px;
-	opacity: 0.8;
-	transition: 0.4s;
-}
-
-.pagination a.active {
-	background-color: #4cb8e0;
-	color: white;
-}
-
-.pagination a:hover:not(.active) {
-	opacity: 1;
-	color: #0e2341;
-}

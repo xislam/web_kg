@@ -5,8 +5,6 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/header.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/mobileBurger.css' %} ">
     <link rel="stylesheet" href="{% static 'css/footer.css' %} ">
     {% block styles %}{% endblock %}
 
@@ -16,72 +14,8 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
     />
-    <title>Document</title>
 </head>
 <body>
-<header class="container">
-    <div class="header_logo_container">
-        <h1 style="color: #089CD6;">𝓚𝔂𝓻𝓰𝔂𝔃 𝓛𝓪𝓷𝓭</h1>
-    </div>
-    <div class="header_burger">
-        <input id="menu-toggle" type="checkbox"/>
-        <label class="menu-button-container" for="menu-toggle">
-            <div class="menu-button"></div>
-        </label>
-    </div>
-    <ul class="nav">
-        <li>
-            <a class="link" href="{% url 'index' %}"><span>START</span></a>
-        </li>
-        <li class="UBER">
-            <a class="link uber" href=""
-            ><span class="select_in_nav">UBER ▼</span></a
-            >
-            <ul class="sub_nav_select">
-                <li class="li"><a href="{% url 'about_us' %}">UBER MIC</a></li>
-                <li class="li2"><a href="{% url 'about_kg' %}">UBER KIRGISISTAN</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="link" href=""><span>REISEZIELE</span></a>
-        </li>
-        <li>
-            <a class="link" href="{% url 'gallery' %}"><span>GALLERIE</span></a>
-        </li>
-        <li>
-            <a class="link" href="{% url 'blocks' %}"><span>BLOG</span></a>
-        </li>
-        <li>
-            <a class="link" href="{% url 'contact' %}"><span>KONTAKT</span></a>
-        </li>
-    </ul>
-    <button class="mail_btn">EMAIL</button>
-</header>
-<div class="bg_burger">
-    <div class="container mobile_menu_container">
-        <ul class="mobile_nav">
-            <li><a href="">START</a></li>
-            <li>
-                <div class="uber_select">
-                    <span>UBER</span>
-                    <label style="display: inline-block">
-                        <input class="inpF" type="checkbox"/>
-                        <div class="f"></div>
-                    </label>
-                </div>
-                <ul class="sub_nav">
-                    <li class="li"><a href="">UBER MIC</a></li>
-                    <li><a href="">UBER KIRGISISTAN</a></li>
-                </ul>
-            </li>
-            <li><a href="">REISEZIELE</a></li>
-            <li><a href="">GALLERIE</a></li>
-            <li><a href="">BLOG</a></li>
-            <li><a href="">KONTAKT</a></li>
-        </ul>
-    </div>
-</div>
-
 {% block content %}{% endblock %}
 
 <div class="bg_footer">
@@ -132,4 +66,3 @@
 ></script>
 </body>
 </html>
-
