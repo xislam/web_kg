@@ -18,16 +18,18 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from backend.views import BlogList, ContactView, AboutAsView, IndexView, GalleryView
+from backend.views import BlogList, ContactView, AboutAsView, IndexView, GalleryView, BlogDetailView, AboutKgView
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('blocks/', BlogList.as_view(), name='blocks'),
+                  path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
                   path('contact/', ContactView.as_view(), name='contact'),
                   path('about_us/', AboutAsView.as_view(), name='about_us'),
-                  path('index/', IndexView.as_view(), name='index'),
-                  path('gallery/', GalleryView.as_view(), name='gallery')
+                  path('', IndexView.as_view(), name='index'),
+                  path('gallery/', GalleryView.as_view(), name='gallery'),
+                  path('about_kg/', AboutKgView.as_view(), name='about_kg'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
