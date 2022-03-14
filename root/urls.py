@@ -27,7 +27,7 @@ urlpatterns = [
                   path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
                   path('contact/', ContactView.as_view(), name='contact'),
                   path('about_us/', AboutAsView.as_view(), name='about_us'),
-                  path('index/', IndexView.as_view(), name='index'),
+                  path('', IndexView.as_view(), name='index'),
                   path('gallery/', GalleryView.as_view(), name='gallery'),
                   path('about_kg/', AboutKgView.as_view(), name='about_kg'),
 
