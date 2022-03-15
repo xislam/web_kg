@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg
+from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg, Direction, IndexSlider1
 
 
 class BlogList(ListView):
@@ -52,10 +52,13 @@ class AboutKgView(ListView):
 class IndexView(ListView):
     template_name = 'mainTwo.html'
     model = IndexText
-    context_object_name = 'index_text'
+    context_object_name = 'index'
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        context['slider1'] = IndexSlider1.objects.all()
+        context['birection'] = Direction.objects.all()
+        context['contact'] = Contact.objects.first()
         return context
 
 
@@ -67,3 +70,19 @@ class GalleryView(ListView):
     def get_context_data(self, **kwargs):
         context = super(GalleryView, self).get_context_data(**kwargs)
         return context
+
+
+class DirectionView(ListView):
+    template_name = 'destinations.html'
+    model = Direction
+    context_object_name = 'direction'
+
+    def get_context_data(self, **kwargs):
+        context = super(DirectionView, self).get_context_data(**kwargs)
+        return context
+
+
+class DirectionDetailView(DetailView):
+    model = IndexSlider1
+    template_name = 'parts_description.html'
+    context_object_name = 'parts'

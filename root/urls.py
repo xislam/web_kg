@@ -18,7 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from backend.views import BlogList, ContactView, AboutAsView, IndexView, GalleryView, BlogDetailView, AboutKgView
+from backend.views import BlogList, ContactView, AboutAsView, IndexView, GalleryView, BlogDetailView, AboutKgView, \
+    DirectionView, DirectionDetailView
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -30,6 +31,8 @@ urlpatterns = [
                   path('', IndexView.as_view(), name='index'),
                   path('gallery/', GalleryView.as_view(), name='gallery'),
                   path('about_kg/', AboutKgView.as_view(), name='about_kg'),
+                  path('direction/', DirectionView.as_view(), name='direction'),
+                  path('direction_w/<int:pk>/', DirectionDetailView.as_view(), name='detail_w')
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

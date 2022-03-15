@@ -28,11 +28,7 @@
 
         <header class="container">
             <div class="header_logo_container">
-                <img
-                        class="logo"
-                        src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/logo-ns-1.png"
-                        alt=""
-                />
+                <h1 style="color: #089CD6;">KYRGYZ LAND</h1>
             </div>
             <div class="header_burger">
                 <input id="menu-toggle" type="checkbox"/>
@@ -45,35 +41,34 @@
             </div>
             <ul class="nav">
                 <li>
-                    <a href=""><span>START</span></a>
+                    <a href="{% url 'index' %}"><span>START</span></a>
                 </li>
                 <li class="UBER">
                     <a href=""><span class="select_in_nav">ABOUT US ▼</span></a>
                     <ul class="sub_nav_select">
-                        <li><a href="../html/destinations.html">ABOUT ME</a></li>
-                        <li><a href="../html/destinations.html">ABOUT KYRGYZSTAN</a></li>
+                        <li><a href="{% url 'about_us' %}">ABOUT ME</a></li>
+                        <li><a href="{% url 'about_kg' %}">ABOUT KYRGYZSTAN</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="../html/destinations.html"><span>DESTINATIONS</span></a>
+                    <a href="{% url 'direction' %}"><span>DESTINATIONS</span></a>
                 </li>
                 <li>
-                    <a href="../html/gallery.html"><span>GALLERY</span></a>
+                    <a href="{% url 'gallery' %}"><span>GALLERY</span></a>
                 </li>
                 <li>
-                    <a href=""><span>BLOG</span></a>
+                    <a href="{% url 'blocks' %}"><span>BLOG</span></a>
                 </li>
                 <li>
-                    <a href="../html/contact.html"><span>CONTACT</span></a>
+                    <a href="{% url 'contact' %}"><span>CONTACT</span></a>
                 </li>
             </ul>
             <button class="emailButton">EMAIL</button>
         </header>
-        <body>
         <div class="bg_burger">
             <div class="container mobile_menu_container">
                 <ul class="mobile_nav">
-                    <li><a href="">START</a></li>
+                    <li><a href="{% url 'index' %}">START</a></li>
                     <li>
                         <div class="uber_select">
                             <span>ABOUT US</span>
@@ -83,30 +78,30 @@
                             </label>
                         </div>
                         <ul class="sub_nav">
-                            <li class="li">ABOUT ME</li>
-                            <li>ABOUT KYRGYZSTAN</li>
+                            <li class="li"><a href="{% url 'about_us' %}">ABOUT ME</a></li>
+                            <li><a href="{% url 'about_kg' %}">ABOUT KYRGYZSTAN</a></li>
                         </ul>
                     </li>
-                    <li><a href="../html/destinations.html">DESTINATIONS</a></li>
-                    <li><a href="../html/gallery.html">GALLERY</a></li>
+                    <li><a href="{% url 'direction' %}">DESTINATIONS</a></li>
+                    <li><a href="{% url 'gallery' %}">GALLERY</a></li>
                     <li>BLOG</li>
-                    <li><a href="../html/contact.html">CONTACT</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
                 </ul>
             </div>
         </div>
-
     </div>
     <div class="firstSlider">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="firstSliderPhotoOne">
-                        <img src="../static/images/Kyrgyzstan-3.jpg">
+                        <img style="object-fit: cover; width: 100% "
+                             src="../static/images/photo_2022-03-15_19-26-00.jpg">
                     </div>
 
                     <div class="firstSliderAnimations">
                         <div class="wrap">
-                            <div class="word" >
+                            <div class="word">
                                 <hr/>
                                 <h>i am talant azemov - director gmbh edelweiss touristik</h>
                             </div>
@@ -159,28 +154,20 @@
         </div>
 
     </div>
+
+    {% for main in index %}
+        <div class="individual">
+            <div class="individual-left">
+                {#            <h1>KYRGYSTAN <span>TRAVEL</span></h1>#}
+                <h1>{{ main.title | safe }}</h1>
+            </div>
+        </div>
+        {{ main.text | safe }}
+    {% endfor %}
     <div class="individual">
-        <div class="individual-left">
-            <h1>KYRGYSTAN <span>TRAVEL</span></h1>
-            <h2>Individuality is very important to Kyrgyzstan travel! We plan individual trips across Kyrgyzstan for you
-                or with you.</h2>
-            <p>My name is Talant Asemov. I arrange trips to and through Kyrgyzstan. With and for you, together we will
-                make your dream trip come true. Our Kyrgyzstan trips can be organized for individual travelers as well
-                as for groups. We also offer family trips with discounts for children. For the majority of trips, you
-                can choose the start and length of the trip yourself.</p>
-
-        </div>
         <div class="individual-right">
-            <p>We can fulfill many wishes with off-road vehicles and buses. If you arrive with your own motorbike or
-                mountain bike, we offer the service of escort vehicles or organize your overnight stay.
-
-                Whether you want to go horseback riding on the famous Kyrgyz horses, or prefer to relax while fishing,
-                mountaineering or study the culture... enjoy the country, we'll take care of the rest! (<>Current travel
-                advice Kyrgyzstan)</p>
-            <a href="destinations.html">destinations</a>
+            <a href="{% url 'direction' %}">destinations</a>
         </div>
-
-
     </div>
     <div class="secondSlider">
         <div class="secondSliderText">
@@ -189,232 +176,47 @@
         </div>
         <div class="swiper2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jailoo-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jailoo excursion</h3>
-                        <p>A Jailoo excursion offers the full experience of Kyrgyz nomadic culture. Nights in the
-                            pristine countryside are incredibly peaceful and tranquil.</p>
+                {% for slider in slider1 %}
+                    <div class="swiper-slide">
+                        <div>
+                            <a href="{% url 'detail_w' slider.pk %}"><img src="{{ slider.icon.url }}"></a>
+                            <a style="text-decoration: none;" href="{% url 'detail_w' slider.pk %}">
+                                <h3>{{ slider.title }}</h3></a>
+                            <p>{{ slider.description |safe | slice:"150" }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/koumiss-ogeqhdebe5z306mizt0kzdietblotdy6c5tavhzx8g.png">
-                        <h3>Kumy's Cure</h3>
-                        <p>Kumys is a result of the fermentation of mare's milk. It is obtained from our pastures and is
-                            so healthy that doctors recommend it in the treatment of diseases.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/food-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>Eat Drink</h3>
-                        <p>The traditional Kyrgyz cuisine is characterized by meat and dairy products from
-                            species-appropriate husbandry with a natural appearance and excellent taste.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/eagle-ogeqh24945jn4v2wto525gcvop5a90pealzh46gnb4.png">
-                        <h3>eagle hunt</h3>
-                        <p>Kyrgyzstan is one of the few places in the world where hawking with raptors is still
-                            practiced. A special experience just by watching.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/hiking-ogeqh4xse3caywuam1tsjc6wna3oz44tm0m6qwmzes.png">
-                        <h3>Hiking & Tracking</h3>
-                        <p>Kyrgyzstan is an outdoor enthusiast's paradise. It offers an unbelievable number of
-                            possibilities for alpine mountaineering or trekking from easy to extreme.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/mountaineering-ogeqhg7tyo2xz0ifjc8gousslh7sgh9dcjrrbbvqps.png">
-                        <h3>Rockclimbing</h3>
-                        <p>About 95% of Kyrgyzstan's territory is covered by mountain ranges, the Tien Shan and the
-                            Pamir. They form the largest contiguous mountain system in the world.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/cycling-ogeqh249tl8g02ye2ilwtuwiv4hlc0tmlmnqb2r5xg.png">
-                        <h3>To go biking</h3>
-                        <p>The most popular exploration method is cycling. Lovers of extreme sports and long mountain
-                            bike tours will appreciate the potential.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jeep-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jeep and engine</h3>
-                        <p>Approximately 70% of roads in Kyrgyzstan are unpaved. This makes the country an ideal place
-                            for off-road experiences with our jeep and motorbike tours.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/horse-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>horseback riding tours</h3>
-                        <p>Riding trails lead through landscapes with untouched mountain lakes, beautiful spruce forests
-                            and alpine meadows in high mountain valleys.</p>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
             <div class="swiper-pagination2"></div>
         </div>
         <div class="swiper7">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jailoo-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jailoo excursion</h3>
-                        <p>A Jailoo excursion offers the full experience of Kyrgyz nomadic culture. Nights in the
-                            pristine countryside are incredibly peaceful and tranquil.</p>
+                {% for slider in slider1 %}
+                    <div class="swiper-slide">
+                        <div>
+                            <a href="{% url 'detail_w' slider.pk %}"><img src="{{ slider.icon.url }}"></a>
+                            <a style="text-decoration: none;" href="{% url 'detail_w' slider.pk %}">
+                                <h3>{{ slider.title }}</h3></a>
+                            <p>{{ slider.description |safe | slice:"150" }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/koumiss-ogeqhdebe5z306mizt0kzdietblotdy6c5tavhzx8g.png">
-                        <h3>Kumy's Cure</h3>
-                        <p>Kumys is a result of the fermentation of mare's milk. It is obtained from our pastures and is
-                            so healthy that doctors recommend it in the treatment of diseases.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/food-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>Eat Drink</h3>
-                        <p>The traditional Kyrgyz cuisine is characterized by meat and dairy products from
-                            species-appropriate husbandry with a natural appearance and excellent taste.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/eagle-ogeqh24945jn4v2wto525gcvop5a90pealzh46gnb4.png">
-                        <h3>eagle hunt</h3>
-                        <p>Kyrgyzstan is one of the few places in the world where hawking with raptors is still
-                            practiced. A special experience just by watching.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/hiking-ogeqh4xse3caywuam1tsjc6wna3oz44tm0m6qwmzes.png">
-                        <h3>Hiking & Tracking</h3>
-                        <p>Kyrgyzstan is an outdoor enthusiast's paradise. It offers an unbelievable number of
-                            possibilities for alpine mountaineering or trekking from easy to extreme.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/mountaineering-ogeqhg7tyo2xz0ifjc8gousslh7sgh9dcjrrbbvqps.png">
-                        <h3>Rockclimbing</h3>
-                        <p>About 95% of Kyrgyzstan's territory is covered by mountain ranges, the Tien Shan and the
-                            Pamir. They form the largest contiguous mountain system in the world.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/cycling-ogeqh249tl8g02ye2ilwtuwiv4hlc0tmlmnqb2r5xg.png">
-                        <h3>To go biking</h3>
-                        <p>The most popular exploration method is cycling. Lovers of extreme sports and long mountain
-                            bike tours will appreciate the potential.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jeep-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jeep and engine</h3>
-                        <p>Approximately 70% of roads in Kyrgyzstan are unpaved. This makes the country an ideal place
-                            for off-road experiences with our jeep and motorbike tours.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/horse-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>horseback riding tours</h3>
-                        <p>Riding trails lead through landscapes with untouched mountain lakes, beautiful spruce forests
-                            and alpine meadows in high mountain valleys.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="swiper-pagination2"></div>
         </div>
         <div class="swiper12">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jailoo-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jailoo excursion</h3>
-                        <p>A Jailoo excursion offers the full experience of Kyrgyz nomadic culture. Nights in the
-                            pristine countryside are incredibly peaceful and tranquil.</p>
+                {% for slider in slider1 %}
+                    <div class="swiper-slide">
+                        <div>
+                            <a href="{% url 'detail_w' slider.pk %}"><img src="{{ slider.icon.url }}"></a>
+                            <a style="text-decoration: none;" href="{% url 'detail_w' slider.pk %}">
+                                <h3>{{ slider.title }}</h3></a>
+                            <p>{{ slider.description |safe | slice:"150" }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/koumiss-ogeqhdebe5z306mizt0kzdietblotdy6c5tavhzx8g.png">
-                        <h3>Kumy's Cure</h3>
-                        <p>Kumys is a result of the fermentation of mare's milk. It is obtained from our pastures and is
-                            so healthy that doctors recommend it in the treatment of diseases.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/food-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>Eat Drink</h3>
-                        <p>The traditional Kyrgyz cuisine is characterized by meat and dairy products from
-                            species-appropriate husbandry with a natural appearance and excellent taste.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/eagle-ogeqh24945jn4v2wto525gcvop5a90pealzh46gnb4.png">
-                        <h3>eagle hunt</h3>
-                        <p>Kyrgyzstan is one of the few places in the world where hawking with raptors is still
-                            practiced. A special experience just by watching.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/hiking-ogeqh4xse3caywuam1tsjc6wna3oz44tm0m6qwmzes.png">
-                        <h3>Hiking & Tracking</h3>
-                        <p>Kyrgyzstan is an outdoor enthusiast's paradise. It offers an unbelievable number of
-                            possibilities for alpine mountaineering or trekking from easy to extreme.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/mountaineering-ogeqhg7tyo2xz0ifjc8gousslh7sgh9dcjrrbbvqps.png">
-                        <h3>Rockclimbing</h3>
-                        <p>About 95% of Kyrgyzstan's territory is covered by mountain ranges, the Tien Shan and the
-                            Pamir. They form the largest contiguous mountain system in the world.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/cycling-ogeqh249tl8g02ye2ilwtuwiv4hlc0tmlmnqb2r5xg.png">
-                        <h3>To go biking</h3>
-                        <p>The most popular exploration method is cycling. Lovers of extreme sports and long mountain
-                            bike tours will appreciate the potential.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/jeep-ogeqh7ra95rd2iupwqktkexn90dhj7bsbdwdzu8a9s.png">
-                        <h3>Jeep and engine</h3>
-                        <p>Approximately 70% of roads in Kyrgyzstan are unpaved. This makes the country an ideal place
-                            for off-road experiences with our jeep and motorbike tours.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div>
-                        <img src="../icons/horse-ogeqh4xronni3oytd7cxuxn9gurdw40lazxxk0cgsg.png">
-                        <h3>horseback riding tours</h3>
-                        <p>Riding trails lead through landscapes with untouched mountain lakes, beautiful spruce forests
-                            and alpine meadows in high mountain valleys.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="swiper-pagination2"></div>
         </div>
@@ -423,122 +225,47 @@
     <div class="thirdSlider">
         <div class="swiper3">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/ALAI-VALLEY-670x446.jpg">
+                {% for dir in birection %}
+                    <div class="swiper-slide">
+                        <div class="thirdSliderBox">
+                            <img src="{{ dir.img.url }}">
+                        </div>
+                        <div class="thirdSliderText">
+                            <h3>{{ dir.title }}</h3>
+                            <p>{{ dir.category }}</p>
+                        </div>
                     </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>1 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Ak-Sai-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>2 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Chunkurchak-Ski-Resort-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>3 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Eki-Naryn-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>4 Jailoo .</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="swiper8">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/ALAI-VALLEY-670x446.jpg">
+                {% for dir in birection %}
+                    <div class="swiper-slide">
+                        <div class="thirdSliderBox">
+                            <img src="{{ dir.img.url }}">
+                        </div>
+                        <div class="thirdSliderText">
+                            <h3>{{ dir.title }}</h3>
+                            <p>{{ dir.category }}</p>
+                        </div>
                     </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>1 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Ak-Sai-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>2 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Chunkurchak-Ski-Resort-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>3 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Eki-Naryn-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>4 Jailoo .</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="swiper13">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/ALAI-VALLEY-670x446.jpg">
+                {% for dir in birection %}
+                    <div class="swiper-slide">
+                        <div class="thirdSliderBox">
+                            <img src="{{ dir.img.url }}">
+                        </div>
+                        <div class="thirdSliderText">
+                            <h3>{{ dir.title }}</h3>
+                            <p>{{ dir.category }}</p>
+                        </div>
                     </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>1 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Ak-Sai-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>2 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Chunkurchak-Ski-Resort-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>3 Jailoo .</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="thirdSliderBox">
-                        <img src="../images/Eki-Naryn-Valley-1200x799.jpg">
-                    </div>
-                    <div class="thirdSliderText">
-                        <h3>Jailoo excursion</h3>
-                        <p>4 Jailoo .</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -553,10 +280,8 @@
                 <hr/>
             </div>
             <div class="anytimeTextTwo">
-                <h3>ANYTIME <span>& ANYWHERE</span></h3>
-                <p>Have we managed to arouse your interest in Kyrgyzstan? Then send us an email with your questions or
-                    requests. We would be happy to send you a non-binding offer. We look forward to seeing you and
-                    warmly welcome you!</p>
+                <h3>{{ contact.title |safe }}</h3>
+                <p>{{ contact.text| safe }}</p>
 
             </div>
             <button>send e-mail</button>
