@@ -3,58 +3,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 /* FONTS */
 
-
-
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
 }
+
 /* HEADER */
 
 /* menu */
 .img_blockpost {
-	width: 100%;
-	margin-bottom: 30px;
-}
-.zogolovok a {
-	color: #31609f;
-	font-size: 35px;
-	font-family: 'Montserrat', sans-serif;
-	letter-spacing: 1.3px;
-	transition: 0.4s;
-	cursor: pointer;
-	text-decoration: none;
-}
-.zogolovok {
-	margin-bottom: 30px;
-}
-.zogolovok a:hover {
-	color: rgb(122, 122, 247);
-}
-.text {
-	color: #5a80b1;
-	font-size: 19px;
-	letter-spacing: 1.3px;
-	margin-bottom: 30px;
-	font-family: 'Lato';
-}
-.btn {
-	border: none;
-	background: transparent;
-	font-size: 20px;
-	color: rgb(122, 122, 247);
-	margin-bottom: 40px;
-}
-.btn a {
-	color: rgb(122, 122, 247);
-	font-size: 17px;
-	text-decoration: none;
-	transition: 0.4s;
-	margin-right: 5px;
-}
-.btn a:hover {
-	color: rgb(80, 99, 150);
-	margin-right: 20px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
+.zogolovok a {
+    color: #31609f;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.3px;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.zogolovok {
+    margin-bottom: 30px;
+}
+
+.zogolovok a:hover {
+    color: rgb(122, 122, 247);
+}
+
+.text {
+    color: #5a80b1;
+    font-size: 19px;
+    letter-spacing: 1.3px;
+    margin-bottom: 30px;
+    font-family: 'Lato';
+}
+
+.btn {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: rgb(122, 122, 247);
+    margin-bottom: 40px;
+}
+
+.btn a {
+    color: rgb(122, 122, 247);
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.4s;
+    margin-right: 5px;
+}
+
+.btn a:hover {
+    color: rgb(80, 99, 150);
+    margin-right: 20px;
+}
+
+.pagination {
+    /* display: inline-block; */
+    margin-bottom: 60px;
+}
+
+.pagination a {
+    color: rgba(49, 96, 159, 0.5);
+    float: left;
+    padding: 15px 22px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    background: rgb(240, 240, 240);
+    margin-left: 3px;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.pagination a.active {
+    background-color: #4cb8e0;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    opacity: 1;
+    color: #0e2341;
+}
