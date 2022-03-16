@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from backend.views import BlogList, ContactView, AboutAsView, IndexView, GalleryView, BlogDetailView, AboutKgView, \
-    DirectionView, DirectionDetailView
+    DirectionView, DirectionDetailView, WDirectionDetailView
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -32,7 +32,9 @@ urlpatterns = [
                   path('gallery/', GalleryView.as_view(), name='gallery'),
                   path('about_kg/', AboutKgView.as_view(), name='about_kg'),
                   path('direction/', DirectionView.as_view(), name='direction'),
-                  path('direction_w/<int:pk>/', DirectionDetailView.as_view(), name='detail_w')
+                  path('direction_w/<int:pk>/', DirectionDetailView.as_view(), name='detail_w'),
+                  path('directions/<int:pk>/', WDirectionDetailView.as_view(), name='directions'),
+                  path('<str:category>', DirectionView.as_view(), name="category")
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

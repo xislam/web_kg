@@ -22,14 +22,11 @@
     <footer class="container">
         <div class="footer_display">
             <div class="block_for_footer_text block_img">
-                <img
-                        class="logo"
-                        src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/white-350-1-300x93.png"
-                        alt="image"
-                />
+                 <h1 style="color: #089CD6;">KYRGYZ LAND</h1>
             </div>
+            {% for contact in contact%}
             <div class="block_for_footer_text">
-                <h4>POSTANSCHRIFT</h4>
+                <h4>POSTAL ADDRESS</h4>
                 <p>
                     {{ contact.address }} <br/>
                     {{ contact.index }} <br/>
@@ -37,7 +34,7 @@
                 </p>
             </div>
             <div class="block_for_footer_text">
-                <h4>KONTAKT</h4>
+                <h4>CONTACT</h4>
                 <p>
                     {{ contact.phone_1 }} <br/>
                     {{ contact.email }} <br/>
@@ -54,6 +51,7 @@
                     </a>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </footer>
 </div>

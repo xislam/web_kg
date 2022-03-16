@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg, Direction, IndexSlider1
+from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg, Direction, IndexSlider1, \
+    CategoryDirection
 
 
 class BlogList(ListView):
@@ -10,17 +11,34 @@ class BlogList(ListView):
     paginate_by = 3
     context_object_name = 'blocks'
 
+    def get_context_data(self, **kwargs):
+        context = super(BlogList, self).get_context_data(**kwargs)
+        context["contact"] = Contact.objects.all()
+        context["links"] = Links.objects.first()
+        return context
+
 
 class BlogDetailView(DetailView):
     model = Blog
     template_name = 'blog_ditail.html'
     context_object_name = 'blog'
 
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context["links"] = Links.objects.first()
+        return context
+
 
 class ContactView(ListView):
     template_name = 'contact.html'
     model = Contact
-    context_object_name = 'contacts'
+    context_object_name = 'contact'
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactView, self).get_context_data(**kwargs)
+        context["contacts"] = Contact.objects.first()
+        context["links"] = Links.objects.first()
+        return context
 
 
 class AboutAsView(ListView):
@@ -31,7 +49,7 @@ class AboutAsView(ListView):
     def get_context_data(self, **kwargs):
         context = super(AboutAsView, self).get_context_data(**kwargs)
         context["sliders"] = Gallery.objects.all()
-        context["contacts"] = Contact.objects.first()
+        context["contact"] = Contact.objects.all()
         context["links"] = Links.objects.first()
         return context
 
@@ -44,7 +62,7 @@ class AboutKgView(ListView):
     def get_context_data(self, **kwargs):
         context = super(AboutKgView, self).get_context_data(**kwargs)
         context["sliders"] = Gallery.objects.all()
-        context["contacts"] = Contact.objects.first()
+        context["contact"] = Contact.objects.all()
         context["links"] = Links.objects.first()
         return context
 
@@ -58,7 +76,7 @@ class IndexView(ListView):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['slider1'] = IndexSlider1.objects.all()
         context['birection'] = Direction.objects.all()
-        context['contact'] = Contact.objects.first()
+        context['contact'] = Contact.objects.all()
         return context
 
 
@@ -69,6 +87,7 @@ class GalleryView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(GalleryView, self).get_context_data(**kwargs)
+        context['contact'] = Contact.objects.all()
         return context
 
 
@@ -79,6 +98,15 @@ class DirectionView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(DirectionView, self).get_context_data(**kwargs)
+        context['slider1'] = IndexSlider1.objects.all()
+        context['contact'] = Contact.objects.all()
+        context["categories"] = CategoryDirection.objects.all()
+        category = self.kwargs.get('category')
+
+        if category:
+            context["directions"] = Direction.objects.filter(category__name=category)
+        else:
+            context["directions"] = Direction.objects.filter(category__name=CategoryDirection.objects.first())
         return context
 
 
@@ -86,3 +114,19 @@ class DirectionDetailView(DetailView):
     model = IndexSlider1
     template_name = 'parts_description.html'
     context_object_name = 'parts'
+
+    def get_context_data(self, **kwargs):
+        context = super(DirectionDetailView, self).get_context_data(**kwargs)
+        context["links"] = Links.objects.first()
+        return context
+
+
+class WDirectionDetailView(DetailView):
+    model = Direction
+    template_name = 'directions_ditaile.html'
+    context_object_name = 'directions'
+
+    def get_context_data(self, **kwargs):
+        context = super(WDirectionDetailView, self).get_context_data(**kwargs)
+        context["links"] = Links.objects.first()
+        return context

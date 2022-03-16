@@ -1,55 +1,59 @@
-.destinationsFilter{
-	display: flex;
-	width: 100%;
-	height: 90px;
-	justify-content: center;
-	align-items: center;
-	background: #89D0EB;
+.destinationsFilter {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    background: #89D0EB;
 }
-.destinationsBox{
-	width: 78%;
-	
+
+.destinationsBox {
+    width: 78%;
+    background: #89D0EB;
+
 }
-.destinationsFilter a{
-	font-family: "Lato", sans-serif;
-	font-size: 14px;
-	font-weight: 700;
-	line-height: 24px;
-	color: white;
-	text-decoration: none;
-	text-transform: uppercase;
-	align-items: center;
+
+.destinationsFilter > a {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    align-items: center;
 
 }
 
 .btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  
-  cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+
+    cursor: pointer;
 }
+
 .btn.active {
-  color: #31609F; 
+    color: #31609F;
 }
-.btn:hover{
-  color: #31609F; 
+
+.btn:hover {
+    color: #31609F;
 }
 
 @media (max-width: 768px) {
 
- .destinationsBox a{
-	font-size: 12px;
-	
-	
+    .destinationsBox a {
+        font-size: 12px;
+
+    }
+
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
 
- }
-@media (min-width: 768px) and (max-width: 1200px) { 
+}
 
-
- }
 @media (min-width: 1200px) {
 
 } 

@@ -44,7 +44,7 @@
                     <a href="{% url 'index' %}"><span>START</span></a>
                 </li>
                 <li class="UBER">
-                    <a href=""><span class="select_in_nav">ABOUT US ▼</span></a>
+                    <a href=""><span class="select_in_nav">ABOUT ▼</span></a>
                     <ul class="sub_nav_select">
                         <li><a href="{% url 'about_us' %}">ABOUT ME</a></li>
                         <li><a href="{% url 'about_kg' %}">ABOUT KYRGYZSTAN</a></li>
@@ -71,7 +71,7 @@
                     <li><a href="{% url 'index' %}">START</a></li>
                     <li>
                         <div class="uber_select">
-                            <span>ABOUT US</span>
+                            <span>ABOUT </span>
                             <label style="display: inline-block;">
                                 <input class="inpF" type="checkbox"/>
                                 <div class="f"></div>
@@ -231,7 +231,7 @@
                             <img src="{{ dir.img.url }}">
                         </div>
                         <div class="thirdSliderText">
-                            <h3>{{ dir.title }}</h3>
+                            <a  style="text-decoration: none;" href="{% url 'directions' dir.pk %}"><h3>{{ dir.title }}</h3></a>
                             <p>{{ dir.category }}</p>
                         </div>
                     </div>
@@ -246,7 +246,8 @@
                             <img src="{{ dir.img.url }}">
                         </div>
                         <div class="thirdSliderText">
-                            <h3>{{ dir.title }}</h3>
+                            <a style="text-decoration: none;" href="{% url 'directions' dir.pk %}">
+                                <h3>{{ dir.title }}</h3></a>
                             <p>{{ dir.category }}</p>
                         </div>
                     </div>
@@ -261,7 +262,8 @@
                             <img src="{{ dir.img.url }}">
                         </div>
                         <div class="thirdSliderText">
-                            <h3>{{ dir.title }}</h3>
+                            <a style="text-decoration: none;" href="{% url 'directions' dir.pk %}">
+                                <h3>{{ dir.title }}</h3></a>
                             <p>{{ dir.category }}</p>
                         </div>
                     </div>
@@ -279,11 +281,13 @@
                 <h2>contact us</h2>
                 <hr/>
             </div>
+            {% for contact in contact%}
             <div class="anytimeTextTwo">
                 <h3>{{ contact.title |safe }}</h3>
                 <p>{{ contact.text| safe }}</p>
 
             </div>
+            {% endfor %}
             <button>send e-mail</button>
         </div>
 

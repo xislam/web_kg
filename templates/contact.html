@@ -1,25 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{% block styles %}
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <!-- <link rel="stylesheet" href="../css/home/main.css"> -->
-    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/individual.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/secondSlider.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/thirdSlider.css' %}">
+      <link rel="stylesheet" href="{% static 'css/header.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/mobileBurger.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %} ">
     <link rel="stylesheet" href="{% static 'css/home/anytime.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/destinations/destinationsSlider.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/header.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/home/response.css' %}"/>
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
@@ -31,110 +21,58 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-</head>
-<body>
 
-<div class="logoBox">
-    <header class="container">
-        <div class="header_logo_container">
-            <img
-                    class="logo"
-                    src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/logo-ns-1.png"
-                    alt=""
-            />
-        </div>
-        <div class="header_burger">
-            <input id="menu-toggle" type="checkbox"/>
-            <label class="menu-button-container" for="menu-toggle">
-                <div class="menu-button"></div>
-            </label>
-        </div>
-        <ul class="nav">
-            <li>
-                <a class="link" href="../html/mainTwo.html"><span>START</span></a>
-            </li>
-            <li class="UBER">
-                <a class="link uber" href=""><span class="select_in_nav">ABOUT US ▼</span></a>
-                <ul class="sub_nav_select">
-                    <li class="li"><a href="../html/mainTwo.html">ABOUT ME</a></li>
-                    <li class="li2"><a href="../html/mainTwo.html">ABOUT KYRGYZSTAN</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="link" href="../html/destinations.html"><span>DESTINATIONS</span></a>
-            </li>
-            <li>
-                <a class="link" href="../html/gallery.html"><span>GALLERY</span></a>
-            </li>
-            <li>
-                <a class="link" href=""><span>BLOG</span></a>
-            </li>
-            <li>
-                <a class="link" href="../html/contact.html"><span>CONTACT</span></a>
-            </li>
-        </ul>
-        <button class="mail_btn">EMAIL</button>
-    </header>
-    <div class="bg_burger">
-        <div class="container mobile_menu_container">
-            <ul class="mobile_nav">
-                <li><a href="../html/mainTwo.html">START</a></li>
-                <li>
-                    <div class="uber_select">
-                        <span>ABOUT US</span>
-                        <label style="display: inline-block">
-                            <input class="inpF" type="checkbox"/>
-                            <div class="f"></div>
-                        </label>
-                    </div>
-                    <ul class="sub_nav">
-                        <li class="li"><a href="../html/mainTwo.html">ABOUT ME</a></li>
-                        <li><a href="../html/mainTwo.html">ABOUT KYRGYZSTAN</a></li>
-                    </ul>
-                </li>
-                <li><a href="../html/destinations.html">DESTINATIONS</a></li>
-                <li><a href="../html/gallery.html">GALLERY</a></li>
-                <li><a href="">BLOG</a></li>
-                <li><a href="">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-<div class="anytime">
+    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/individual.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/firstSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/secondSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/thirdSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/anytime.css' %}">
+    <link rel="stylesheet" href="{% static  'css/destinations/destinationsSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_response.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/firstSliderAnimations.css' %}"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="anytime">
     <div class="anytimeImg">
         <img src="" alt=""/>
     </div>
     <div class="anytimeText">
-        <div class="anytimeTextHr">
-            <h2>contact us</h2>
-            <hr/>
-        </div>
-        <div class="anytimeTextTwo">
-            <h3>ANYTIME <span>& ANYWHERE</span></h3>
-            <p>Have we managed to arouse your interest in Kyrgyzstan? Then send us an email with your questions or
-                requests. We would be happy to send you a non-binding offer. We look forward to seeing you and warmly
-                welcome you!</p>
-
-        </div>
-        <div class="anytimeTextThree">
-            <p>Would you like to ask for more information or reservations? Please contact us. We can be reached by
-                phone, email, WhatsApp and through the contact form on this page.</p>
-        </div>
-        <button>send e-mail</button>
+    <div class="anytimeTextHr">
+        <h2>contact us</h2>
+        <hr/>
     </div>
+    <div class="anytimeTextTwo">
+        {% for contact in contact %}
+        <h3>{{ contact.title | safe }}</h3>
+        <p>{{ contact.text | safe }}</p>
+    </div>
+<button>send e-mail</button>
+        {% endfor %}
+
+</div>
 
 </div>
 <div class="contactLine">
     <div class="contactBox">
         <div class="contactNumber">
             <div class="contactNumberIcon">
-                <img src="../images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png" alt="">
+                <img src="../static/images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png" alt="">
             </div>
             <div>
                 <h2>0996<span>551718899</span></h2>
@@ -143,7 +81,7 @@
         </div>
         <div class="contactWhatsApp">
             <div class="contactWhatsAppIcon">
-                <img src="../images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png" alt="">
+                <img src="../static/images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png" alt="">
             </div>
             <div>
                 <h2>0996<span>551718899</span></h2>
@@ -152,7 +90,7 @@
         </div>
         <div class="contactEmail">
             <div class="contactEmailIcon">
-                <img src="../images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png" alt="">
+                <img src="../static/images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png" alt="">
             </div>
             <div>
                 <h2>info@kirgistan-reisen.com</h2>
@@ -189,60 +127,9 @@
         </form>
     </div>
 </div>
-
-<div class="bg_footer">
-    <footer class="container">
-        <div class="footer_display">
-            <div class="block_for_footer_text block_img">
-                <img
-                        class="logo"
-                        src="https://kirgistan-reisen.com/wp-content/uploads/2019/10/white-350-1-300x93.png"
-                        alt="image"
-                />
-            </div>
-            <div class="block_for_footer_text">
-                <h4>POSTANSCHRIFT</h4>
-                <p>
-                    Prospekt Mira 61a (Ap587) <br/>
-                    720044 Bishkek <br/>
-                    Republic of Kyrgyzstan <br/>
-                </p>
-            </div>
-            <div class="block_for_footer_text">
-                <h4>KONTAKT</h4>
-                <p>
-                    0996 55 171 8899 <br/>
-                    info@kirgistan-reisen.com <br/>
-                </p>
-                <div class="block_icons">
-                    <a href="https://www.youtube.com/">
-                        <i class="icon_you_tube icons"></i>
-                    </a>
-                    <a href="https://web.whatsapp.com/">
-                        <i class="icon_whats_app icons"></i>
-                    </a>
-                    <a href="https://www.facebook.com/">
-                        <i class="icon_facebook icons"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-<div class="under_footer_back">
-    <div class="container">
-        <p>
-            <a class="webdesign" href="https://wetnose.design/"
-            >webdesign | WetNose</a
-            >
-        </p>
-    </div>
-</div>
-
-
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script src="{% static 'js/app.js' %}"></script>
-<script src="{% static 'js/burger.js' %}"></script>
-</body>
-</html>
-
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
+{% endblock %}
