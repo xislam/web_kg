@@ -3,6 +3,8 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/about_us_response.css' %} "/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_response.css' %}"/>
 {% endblock %}
 {% block content %}
 
@@ -103,17 +105,24 @@
             <img src="./assets/phone.jpg" alt=""/>
         </div>
         <div class="description">
+            {% for contact in contact %}
             <h6>
                 KONTAKTIEREN SIE UNS
                 <div class="line"></div>
             </h6>
-            <h1>{{ contacts.title }}</h1>
+            <h1>{{ contact.title | safe }}</h1>
             <p>
-                {{ contacts.text| safe }}
+                {{ contact.text| safe }}
             </p>
+            {% endfor %}
             <div class="btn_wrapper">
                 <button class="contackt_btn">EMAIL SENDEN</button>
             </div>
         </div>
     </section>
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
 {% endblock %}

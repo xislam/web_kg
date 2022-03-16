@@ -4,6 +4,8 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/about_kg_style.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/about_kg_response.css' %} "/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_response.css' %}"/>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -187,15 +189,22 @@
             <img src="./assets/phone.jpg" alt=""/>
         </div>
         <div class="description">
+            {% for contacts in contact %}
             <h6>
-                KONTAKTIEREN SIE UNS
+                contact us
                 <div class="line"></div>
             </h6>
-             <h1>{{ contacts.title }}</h1>
+             <h1>{{ contacts.title | safe }}</h1>
 {#            <h1><strong>JEDERZEIT </strong><span>& ÜBERALL</span></h1>#}
             <p>
                   {{ contacts.text| safe }}
             </p>
+            {% endfor %}
         </div>
     </section>
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
 {% endblock %}
