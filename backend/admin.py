@@ -11,3 +11,4 @@ admin.site.register(Blog)
 admin.site.register(Gallery)
 admin.site.register(AboutUs)
 admin.site.register(Links)
+admin.site.site_header = 'KYRGYZ LAND  ADMIN'
