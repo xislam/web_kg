@@ -15,11 +15,18 @@
 {% endblock %}
 {% block content %}
     <title>About kg</title>
-    <section class="about_author container">
-        <div class="blocks_for_first_section">
-            {{ about_kg.title }}
-{#            <h1><strong>ÜBER</strong> KIRGISISTAN</h1>#}
-            {{ about_kg.text }}
+         <section class="container">
+           {% for about_kg in about_kg %}
+            <div class="about_author">
+                <div class="blocks_for_first_section">
+                    {{ about_kg.title | safe }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="animation">
+            {% for about_kg in about_kg %}
+                {{ about_kg.text | safe }}
+            {% endfor %}
         </div>
     <div class="btn_wrapper">
             <button class="con_btn">CONTACT INFO</button>
