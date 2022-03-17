@@ -1,8 +1,9 @@
 .anytime{
 	width: 90%;
 	height: 650px;
-	display: flex;
+	display: inline;
 	padding:  140px 0 0 0;
+
 
 }
 .anytimeImg{
@@ -59,7 +60,7 @@
 }
 .anytimeText{
 	width: 40%;
-	margin: 0;
+	margin: 0 200px;
 }
 
 .anytimeText button {
