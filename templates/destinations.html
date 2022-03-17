@@ -76,7 +76,7 @@
     <div class="destinationsFilter">
         <div class="destinationsBox">
             {% for category in categories %}
-                <a href="{% url 'category' category=category.name %}" class="btn">{{ category.name }}</a>
+                <a href="{% url 'category' category=category.name %}" class="btn" style="color: #ffffff">{{ category.name }}</a>
             {% endfor %}
         </div>
 
