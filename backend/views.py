@@ -101,12 +101,14 @@ class DirectionView(ListView):
         context['slider1'] = IndexSlider1.objects.all()
         context['contact'] = Contact.objects.all()
         context["categories"] = CategoryDirection.objects.all()
+        context["directions"] = Direction.objects.all()
         category = self.kwargs.get('category')
 
         if category:
             context["directions"] = Direction.objects.filter(category__name=category)
-        else:
-            context["directions"] = Direction.objects.filter(category__name=CategoryDirection.objects.first())
+        if category == "ALL":
+            context["directions"] = Direction.objects.all()
+
         return context
 
 
@@ -118,6 +120,7 @@ class DirectionDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DirectionDetailView, self).get_context_data(**kwargs)
         context["links"] = Links.objects.first()
+        context["contact"] = Contact.objects.all()
         return context
 
 
@@ -129,4 +132,5 @@ class WDirectionDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(WDirectionDetailView, self).get_context_data(**kwargs)
         context["links"] = Links.objects.first()
+        context["contact"] = Contact.objects.all()
         return context
