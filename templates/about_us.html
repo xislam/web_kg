@@ -16,10 +16,11 @@
                 </div>
             </div>
         {% endfor %}
-        {% for about_us in about_us %}
-            {{ about_us.text | safe }}
-        {% endfor %}
-
+        <div class="animation">
+            {% for about_us in about_us %}
+                {{ about_us.text | safe }}
+            {% endfor %}
+        </div>
         <div class="btn_wrapper">
             <button class="contackt_btn">KONTAKT INFO</button>
         </div>
@@ -106,14 +107,14 @@
         </div>
         <div class="description">
             {% for contact in contact %}
-            <h6>
-                KONTAKTIEREN SIE UNS
-                <div class="line"></div>
-            </h6>
-            <h1>{{ contact.title | safe }}</h1>
-            <p>
-                {{ contact.text| safe }}
-            </p>
+                <h6>
+                    KONTAKTIEREN SIE UNS
+                    <div class="line"></div>
+                </h6>
+                <h1>{{ contact.title | safe }}</h1>
+                <p>
+                    {{ contact.text| safe }}
+                </p>
             {% endfor %}
             <div class="btn_wrapper">
                 <button class="contackt_btn">EMAIL SENDEN</button>
