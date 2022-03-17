@@ -3,9 +3,7 @@
 {% block styles %}
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <!-- <link rel="stylesheet" href="../css/home/main.css"> -->
-      <link rel="stylesheet" href="{% static 'css/header.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/mobileBurger.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %} ">
+
     <link rel="stylesheet" href="{% static 'css/home/anytime.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
 
@@ -35,9 +33,9 @@
     <link rel="stylesheet" href="{% static 'css/home/thirdSlider.css' %}">
     <link rel="stylesheet" href="{% static 'css/home/anytime.css' %}">
     <link rel="stylesheet" href="{% static  'css/destinations/destinationsSlider.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/blog_response.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/firstSliderAnimations.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/blog_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/blog_response.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/firstSliderAnimations.css' %}"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -48,6 +46,7 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container" style="display: inline-block">
     <div class="anytime">
     <div class="anytimeImg">
         <img src="" alt=""/>
@@ -127,6 +126,7 @@
         </form>
     </div>
 </div>
+    </div>
 {% endblock %}
 {% block scripts %}
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
