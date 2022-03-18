@@ -43,15 +43,15 @@ h4 {
 	text-decoration: none;
 }
 .icon_you_tube {
-	content: url(./assets/youtube-logotype.png);
+	content: url(./css/assets/youtube-logotype.png);
 	transition: 0.4s;
 }
 .icon_whats_app {
-	content: url(./assets/whatsapp.png);
+	content: url(./css/assets/whatsapp.png);
 	transition: 0.4s;
 }
 .icon_facebook {
-	content: url(./assets/facebook-app-symbol.png);
+	content: url(./css/assets/facebook-app-symbol.png);
 	transition: 0.4s;
 }
 .icon_you_tube:hover,
