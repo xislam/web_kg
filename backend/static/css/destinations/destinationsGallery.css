@@ -37,7 +37,7 @@
 
 .destinationsTextOne {
     bottom: calc(40%);
-    right: calc(42%);
+    right: calc(15%);
 
     position: absolute;
     cursor: pointer;
