@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
 
-from backend.models import IndexText
+from backend.models import IndexText, DropAs
 
 
 class IndexTextAdminForm(forms.ModelForm):
@@ -18,3 +18,11 @@ class IndexTextAdmin(admin.ModelAdmin):
 
 
 admin.site.register(IndexText, IndexTextAdmin)
+
+
+class DropAsForm(forms.ModelForm):
+    class Meta:
+        model = DropAs
+        fields = '__all__'
+
+

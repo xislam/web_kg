@@ -134,3 +134,5 @@ class WDirectionDetailView(DetailView):
         context["links"] = Links.objects.first()
         context["contact"] = Contact.objects.all()
         return context
+
+

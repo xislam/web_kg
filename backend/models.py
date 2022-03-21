@@ -110,7 +110,7 @@ class Contact(models.Model):
     phone_2 = models.CharField(verbose_name="Номер телефона", max_length=12)
     email = models.EmailField(verbose_name="Почта")
     address = models.CharField(max_length=50, verbose_name="Адрес")
-    index = models.CharField(max_length=50 , verbose_name="Почтовый индекс")
+    index = models.CharField(max_length=50, verbose_name="Почтовый индекс")
 
     def __str__(self):
         return self.title
@@ -132,3 +132,16 @@ class Links(models.Model):
     class Meta:
         verbose_name_plural = "Ссылки"
         verbose_name = "Ссылки"
+
+
+class DropAs(models.Model):
+    surname = models.CharField(max_length=30, verbose_name='Фамилия')
+    email = models.EmailField(verbose_name='почта')
+    text = models.TextField(verbose_name='Текст')
+
+    def __str__(self):
+        return self.surname
+
+    class Meta:
+        verbose_name = "Фориа обратной связи"
+        verbose_name_plural = "Фориа обратной связи"
