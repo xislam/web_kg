@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/home/individual.css' %}">
@@ -47,84 +47,93 @@
 
 {% block content %}
     <div class="anytime">
-    <div class="anytimeImg">
-        <img src="" alt=""/>
-    </div>
-    <div class="anytimeText">
-    <div class="anytimeTextHr">
-        <h2>contact us</h2>
-        <hr/>
-    </div>
-    <div class="anytimeTextTwo">
-        {% for contact in contact %}
-        <h3>{{ contact.title | safe }}</h3>
-        <p>{{ contact.text | safe }}</p>
-    </div>
-<button>send e-mail</button>
-        {% endfor %}
-
-</div>
-
-</div>
-<div class="contactLine">
-    <div class="contactBox">
-        <div class="contactNumber">
-            <div class="contactNumberIcon">
-                <img src="../static/images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png" alt="">
-            </div>
-            <div>
-                <h2>0996<span>551718899</span></h2>
-                <p>info & date</p>
-            </div>
+        <div class="anytimeImg">
+            <img src="" alt=""/>
         </div>
-        <div class="contactWhatsApp">
-            <div class="contactWhatsAppIcon">
-                <img src="../static/images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png" alt="">
+        <div class="anytimeText">
+            <div class="anytimeTextHr">
+                <h2>contact us</h2>
+                <hr/>
             </div>
-            <div>
-                <h2>0996<span>551718899</span></h2>
-                <p>whatsapp me</p>
-            </div>
-        </div>
-        <div class="contactEmail">
-            <div class="contactEmailIcon">
-                <img src="../static/images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png" alt="">
-            </div>
-            <div>
-                <h2>info@kirgistan-reisen.com</h2>
-                <p>email me</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="emailSend">
-    <div class="emailSendDrop">
-        <hr/>
-        <h2>DROP US A LINE</h2>
-    </div>
-    <div class="emailSendForm">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
+            <div class="anytimeTextTwo">
+                {% for contact in contact %}
+                    <h3>{{ contact.title | safe }}</h3>
+                    <p>{{ contact.text | safe }}</p>
+                    </div>
+                    <button>send e-mail</button>
+                {% endfor %}
 
-                    <input type="email" class="form-control bg-light border-0" id="inputEmail4" placeholder="Surname">
+        </div>
+
+    </div>
+    <div class="contactLine">
+        <div class="contactBox">
+            <div class="contactNumber">
+                <div class="contactNumberIcon">
+                    <img src="{% static 'images/icon-11-ogeqf8bkesugg0gxmbij2p80ldf4aep2s4p2bqvtnk.png' %}" alt="">
                 </div>
-                <div class="form-group col-md-6">
-
-                    <input type="password" class="form-control bg-light border-0" id="inputPassword4"
-                           placeholder="E-mail">
+                <div>
+                    <h2>0996<span>551718899</span></h2>
+                    <p>info & date</p>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="contactWhatsApp">
+                <div class="contactWhatsAppIcon">
+                    <img src="{% static 'images/whatsapp-ogeqhpm8j4r7go0vxw2eb03l9tlibgqamaepemhdse.png' %}" alt="">
+                </div>
+                <div>
+                    <h2>0996<span>551718899</span></h2>
+                    <p>whatsapp me</p>
+                </div>
+            </div>
+            <div class="contactEmail">
+                <div class="contactEmailIcon">
+                    <img src="{% static 'images/icon-14-ogeqf8bkpbr2bjv78ln0qgcf5eswgm6yrq2tprtyt2.png' %}" alt="">
+                </div>
+                <div>
+                    <h2>info@kirgistan-reisen.com</h2>
+                    <p>email me</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="emailSend">
+        <div class="emailSendDrop">
+            <hr/>
+            <h2>DROP US A LINE</h2>
+        </div>
+        <div class="emailSendForm">
+            <form method="POST" action="{% url 'drop_contact' %}">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
 
-                <textarea class="form-control bg-light border-0" id="exampleFormControlTextarea1" rows="5"
+                        <input type="text" name="surname" class="form-control bg-light border-0" id="inputEmail4"
+                               placeholder="Surname">
+                    </div>
+                    <div class="form-group col-md-6">
+
+                        <input type="email" name="email" class="form-control bg-light border-0" id="inputPassword4"
+                               placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                <textarea class="form-control bg-light border-0" name="text" id="exampleFormControlTextarea1" rows="5"
                           placeholder="News..."></textarea>
-            </div>
+                </div>
 
-            <button type="submit" class="btn btn-primary">SEND</button>
-        </form>
+                <button type="submit" class="btn btn-primary">SEND</button>
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="text-center alert alert-{{ message.tags }}">
+                        {{ message|safe }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
-</div>
     </div>
 {% endblock %}
 {% block scripts %}

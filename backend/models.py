@@ -143,5 +143,5 @@ class DropAs(models.Model):
         return self.surname
 
     class Meta:
-        verbose_name = "Фориа обратной связи"
-        verbose_name_plural = "Фориа обратной связи"
+        verbose_name = "Форма обратной связи"
+        verbose_name_plural = "Форма обратной связи"

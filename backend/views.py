@@ -1,8 +1,13 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
+
+from backend.forms import DropAsForm
 
 from backend.models import Blog, Contact, AboutUs, Gallery, Links, IndexText, AboutKg, Direction, IndexSlider1, \
-    CategoryDirection
+    CategoryDirection, DropAs
 
 
 class BlogList(ListView):
@@ -136,3 +141,14 @@ class WDirectionDetailView(DetailView):
         return context
 
 
+class DropAsView(CreateView):
+    model = DropAs
+    template_name = 'contact.html'
+    success_url = reverse_lazy('success_page')
+    success_message = "Отправленно"
+    form_class = DropAsForm
+
+
+def success(request):
+    messages.success(request, 'Thank you for your message. It has been sent.')
+    return redirect('contact')
